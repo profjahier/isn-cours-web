@@ -1,0 +1,102 @@
+/* tentative de palete de couleurs n°1:
+#C1C9CC : gris clair : fond de page
+#52747F : "bleu" foncé : police body, fond footer
+#F1FCFF : presque blanc : fond de sections
+#A5E8FF : bleu ciel : liens menu hover
+#797E7F : gris plutôt foncé : bordure des sections, bordure bas de header, titre h3, liens
+*/
+body{
+  color :#52747F;
+background-color: #C1C9CC;
+font-family: Helvetica, Arial, sans-serif;
+line-height: 1.4em;
+text-align: justify;
+}
+#page{
+width:90%;
+max-width: 1200px;
+margin: auto;
+margin-bottom: 20px;
+text-align: justify;
+}
+section{
+  background-color: #F1FCFF;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #797E7F;
+  border-bottom-width: thick;
+  margin-top: 20px;
+  padding: 20px;
+  padding-top: 10px;
+}
+footer{
+  text-align: right;
+  background-color: #52747F;
+  padding: 10px;
+  border-radius: 5px;
+}
+footer a{
+  color:#F1FCFF
+}
+header{
+  /*
+  background-color: rgba(217, 183, 247, 0.51);
+  margin-top: 10px;
+    padding: 10px;
+    */
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid #797E7F;
+}
+
+nav{
+text-align: center;
+}
+nav li{
+  display: inline-block;
+}
+a{
+  color:#797E7F;
+}
+nav a{
+  display: inline-block;
+  width:150px;
+  padding:10px;
+  text-decoration: none;
+  color: #F1FCFF;
+  background-color: #52747F;
+}
+nav a:hover{
+  color: #797E7F;
+  background-color: #A5E8FF;
+}
+/*
+.makingof h2{
+  text-decoration: underline;
+  font-size: 1.2em;
+  font-weight: bold;
+  color:rgb(130, 50, 170);
+}
+*/
+h2{
+/*  text-decoration: underline; */
+  font-size: 1.4em;
+  font-weight: bold;
+  color:#52747F;
+}
+h3{
+/*  text-decoration: underline;
+color:rgb(130, 50, 170); */
+  font-size: 1.2em;
+  font-weight: bold;
+  text-indent: 20px;
+  color: #797E7F;
+
+}
+.top{
+  position:fixed;
+  bottom: 110px;
+  right: 10px;
+  outline: none; /* enleve les pointillés autour de l'image */
+}

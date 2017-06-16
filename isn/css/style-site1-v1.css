@@ -1,0 +1,84 @@
+
+body{
+background-color: rgb(250, 240, 210);
+font-family: Helvetica, Arial, sans-serif;
+line-height: 1.4em;
+text-align: justify;
+}
+#page{
+width:90%;
+max-width: 1200px;
+margin: auto;
+margin-bottom: 20px;
+text-align: justify;
+}
+section{
+  background-color: white;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: rgb(130, 50, 170);
+  border-bottom-width: thick;
+  margin-top: 20px;
+  padding: 20px;
+  padding-top: 10px;
+}
+footer{
+  text-align: right;
+  background-color: rgba(217, 183, 247, 0.51);
+  padding: 10px;
+  border-radius: 5px;
+}
+header{
+  /*
+  background-color: rgba(217, 183, 247, 0.51);
+  margin-top: 10px;
+    padding: 10px;
+    */
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid rgb(130, 50, 170);
+
+}
+header li{
+  display: inline-block;
+}
+header a{
+  display: inline-block;
+  width:150px;
+  padding:10px;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(161, 71, 215);
+}
+header a:hover{
+  color: black;
+  background-color: rgb(193, 129, 228);
+}
+.makingof h2{
+  text-decoration: underline;
+  font-size: 1.2em;
+  font-weight: bold;
+  color:rgb(130, 50, 170);
+}
+h2{
+/*  text-decoration: underline; */
+  font-size: 1.4em;
+  font-weight: bold;
+  color:rgb(130, 50, 170);
+}
+h3{
+/*  text-decoration: underline;
+color:rgb(130, 50, 170); */
+  font-size: 1.2em;
+  font-weight: bold;
+  text-indent: 20px;
+  color: blue;
+
+}
+.top{
+  position:fixed;
+  bottom: 110px;
+  right: 10px;
+  outline: none; /* enleve les pointillés autour de l'image */
+}

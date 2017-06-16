@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>ISN-&Delta;</title>
+<meta name="description" content="Cours de spécialité ISN : HTML5 + CSS3, Python, compléments numériques" />
+<meta name="keywords" content="ISN,HTML,CSS,Python" />
+<meta name="author" content="Ronan JAHIER" />
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="icon" type="image/png" href="../img/logo-favicon.png" />
+</head>
+<body>
+  <header>
+<p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+<span class="titre"> ISN &Delta;</span><br/>
+<span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span></p>
+  </header>
+
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+
+  <div id="page">
+<h1>Cours CSS</h1>
+<section><h2>Sommaire</h2>
+  <ul>
+    <li><a href="#principe">Principe de la mise en forme avec CSS</a></li>
+    <li><a href="#lier-css">Lier une feuille de style CSS à une page html</a></li>
+    <li><a href="#couleurs">Gestion des couleurs</a></li>
+    <li><a href="#texte">Mise en forme du texte</a></li>
+    <li><a href="#liste">Mise en forme des listes</a></li>
+    <li><a href="#tableau">Mise en forme des tableaux</a></li>
+  </ul>
+</section>
+
+<section id="principe">
+<h2>Principe de la mise en forme avec CSS</h2>
+<p>Une feuille de style CSS (Cascading Style Sheet) permet de mettre en forme les différents <strong>éléments</strong> d'une page html. Pour cela, on définit des <strong>sélecteurs</strong> pour lesquels on attribue des <strong>propriétés</strong> de mise en forme.
+</p>
+<p>Un sélecteur permet d'identifier à quel élément ou à quels éléments html on veut associer une certaine mise en forme. Les 3 types principaux de sélecteurs sont :</p>
+<ul><li>les sélecteurs qui identifient un type d'élément html.<br/>
+  ex : a, h1, ul...</li>
+  <li>les sélecteurs   qui identifient  directement une <strong>classe</strong> d'éléments html. Les éléments html peuvent être de natures différentes mais il doivent tous avoir l'attribut <span class="attribut">class</span> avec la même <em>valeur</em>. Un tel sélecteur commence toujours par un point.<br/>
+    ex : .nom_de_la_classe</li>
+    <li>les sélecteurs  qui identifient  <strong>un</strong> élément repéré par son <strong>identifiant</strong> unique. L'éléments html visé doit  avoir un attribut <span class="attribut">id</span> avec une <em>valeur</em> qu'on ne retrouve nulle par ailleurs. Un tel sélecteur commence toujours par un dièse.<br/>
+      ex : #nom_de_l'id</li>
+</ul>
+<p>L'exemple suivant permet d'illustrer ce qui vient d'être écrit :
+</p>
+<div class="code">
+  <span class="commentaire"> ### extrait du fichier  html ###</span><br/>
+  &lt;<span class="balise">h1</span>  <span class="attribut">class</span>="texte_en_rouge"&gt;
+  un joli titre en rouge&lt;<span class="balise">/h1</span>&gt;<br/>
+  &lt;<span class="balise">p</span>&gt;  un petit paragraphe sans prétention &lt;<span class="balise">/p</span>&gt; <br/>
+  &lt;<span class="balise">p</span>  <span class="attribut">class</span>="texte_en_rouge"&gt;
+ce paragraphe en revanche est écrit en rouge, il a la même <strong>classe</strong> que le titre&lt;<span class="balise">/p</span>&gt;<br/>
+      &lt;<span class="balise">p</span>&gt; ce paragraphe aussi est écrit en noir, c'est un paragraphe "standard" &lt;<span class="balise">/p</span>&gt; <br/>
+  &lt;<span class="balise">ul</span>&gt;<br/>
+   &lt;<span class="balise">li</span>&gt; premier item de la liste&lt;<span class="balise">/li</span>&gt;<br/>
+   &lt;<span class="balise">li</span> <span class="attribut">id</span>="item_particulier"&gt; ce 2ème item sera souligné. Il est repéré par son identifiant "item_particulier"&lt;<span class="balise">/li</span>&gt;<br/>
+     &lt;<span class="balise">/ul</span>&gt;<br/>
+</div>
+
+<div class="code">
+  <span class="commentaire"> ### extrait du fichier  css ###</span><br/>
+<span class="selecteur">p</span> { <br/>
+  color : black;<br/>
+} <br/>
+<span class="classe">.texte_en_rouge</span> { <br/>
+color : red;<br/>
+  } <br/>
+  <span class="identifiant">#item_particulier</span> { <br/>
+    text-decoration: underline;<br/>
+      }
+</div>
+<p>L'exemple ci-dessus a introduit des <em>propriétés</em> assez évidentes comme la couleur du texte (color) ou la "décoration" du texte (text-decoration) et les <em>valeurs</em> choisies ne doivent pas sembler mystérieuses !
+</section>
+
+<section id="lier-css">
+<h2>Lier une feuille de style CSS à une page web</h2>
+<p>Il est possible de définir la mise en forme CSS directement dans le code de la page html mais on préfèrera nettement séparer le fichier html qui contient le contenu à présenter et le fichier CSS qui contient la mise en forme du contenu. Cela permet par exemple de modifier la couleur de tous les titres h1 de l'ensemble d'un site Web en effectuant une légère modification du fichier CSS, plutôt que de changer individuellement la mise en forme de chaque titre h1 de chaque fichier html que peut contenir le site complet (j'espère que cet exemple est assez convaincant). <br/>
+  <p>On pourra toutefois à la marge utiliser du langage CSS directement dans un fichier html si on veut exceptionnellement mettre en forme un élément particulier. Pour cela, il faudra définir l'attribut <strong>style</strong> à l'élément en question avec comme valeur les propriétés CSS et leurs valeurs désirées.
+  </p>
+  <p>Exemple :</p>
+  <div class="code">
+    &lt;<span class="balise">h2</span>  <span class="attribut">style</span>="color:red;text-decoration:underline;"
+&gt;
+    titre particulier (rouge souligné)
+    &lt;<span class="balise">/h2</span> &gt;
+</div>
+<p>La "bonne" méthode pour la mise en forme de votre site est donc de lier une feuille de style créée dans un fichier externe au fichier html. Pour cela, il faut ajouter dans l'en-tête du fichier html la ligne suivante :
+  </p>
+  <div class="code">
+  &lt;<span class="balise">link</span> <span class="attribut">rel</span>="stylesheet" <span class="attribut">type</span>="text/css" <span class="attribut">href</span>="adresse_du_fichier.css" /&gt;
+</div>
+<p>Précisons qu'il est possible de lier plusieurs feuilles de style à un même fichier html.</p>
+</section>
+
+<section id="couleurs">
+<h2 >Gestion des couleurs</h2>
+<p>Les propriétés liées à la couleur :
+</p>
+  <ul><li>color : couleur de la police</li>
+    <li>background-color : couleur du fond</li>
+  </ul>
+<p>Les couleurs peuvent être définies par les valeurs rgb, hexadécimal, hsl (et même d'autres), ou par des noms explicites.
+  On peut aussi gérer la transparence des couleurs (ajout du "a" dans la définition de la couleur)<br/>
+  Exemples :
+  </p>
+  <div class="code">
+  <span class="selecteur">body</span> { <br/>
+    color : rgb(103, 198, 133);<br/>
+    background-color : #e25158 ;<br/>
+  } <br/>
+<span class="classe">.nom_classe</span> { <br/>
+  color : hsl(139, 58%, 33%);<br/>
+  background-color : rgba(235, 189, 87, 0.75) ;<br/>
+    } <br/>
+    <span class="identifiant">#nom_id</span> { <br/>
+      color : rgba(#716d30, 0.5) ;<br/>
+      background-color : purple;<br/>
+        }
+</div>
+<p><a href="couleurs.html">En apprendre un peu plus</a> sur la définition des couleurs pour un écran.</p>
+</section>
+
+<section>
+<h2 id="texte">Mise en forme du texte</h2>
+<p>Voici les propriétés qui me semblent le plus utile (pour connaître les valeurs possibles, utliser la complétion de <a href="atom.html">Atom</a>, c'est assez explicite):
+</p>
+  <ul>
+  <li><strong>color</strong> : couleur du texte (<a href="#couleurs">plus d'info</a>)</li>
+  <li><strong>text-align</strong> : alignement du texte (gauche, droite, justifié, centré)</li>
+  <li><strong>text-decoration</strong> : souligné, barré, surligné</li>
+  <li><strong>text-indent</strong> : indentation de la première ligne d'un paragraphe</li>
+  <li><strong>line-height</strong> : espacement entre les lignes (en px, %, em)</li>
+  <li><strong>text-shadow</strong> : ombrage, exprimé sous la forme :<br/>
+  text-shadow: h-shadow v-shadow blur-radius color</li>
+</ul>
+  <div class="code">
+  <span class="selecteur">selecteur</span> {    text-shadow: 5px 3px 1px black;        }
+  </div>
+<p>Plus d'info sur <a href="http://www.w3schools.com/cssref/default.asp#text" target="_blank">W3School</a></p>
+</section>
+
+<section>
+<h2 id="boite">Modèle des boites</h2>
+<p>Toutes les balises de contenu html ont la structure correspondant à l'image suivante :<br/>
+<img src="../img/css-box-model-standard.svg" alt="modele de boite" height="400"/><br/>
+</p>
+<p>La "boite complète comprend :"</p>
+<ul><li>Le contenu de la boite : par exemple un paragraphe, une image, une section... Ce contenu possède une certaine hauteur et largeur.</li>
+  <li>La bordure : plus ou moins épaisse (et même souvent invisible). Le contenu de la boite est plus ou moins espacé de la bordure par la défintion du <em>padding</em>.</li>
+  <li>La marge : elle sépare la bordure de la boite du reste des autres boites (ou de l'écran) présentes dans le document html.</li>
+</ul>
+</p>
+<p>Toutes ces caractéristiques peuvent être mises en forme avec le langage CSS avec les propriétés <strong>margin</strong>, <strong>border</strong>, <strong>padding</strong>.</p>
+</section>
+
+<section>
+<h2 id="positionnement">Positionnement</h2>
+<p>Le contenu d'une page Web s'affiche par défaut dans un flux continu qui place toutes les <a href="#boite">boites</a> les unes à la suite des autres.</p>
+<p>Il est toutefois possible de contrôler le positionnement des boites en les décalant par rapport à leur position "normale" prévue par le flux -- c'est le positionnement <strong>relatif</strong> -- ou même de définir une position spécifique (en px par exemple) de la boite par rapport au bord de la fenêtre du navigateur -- c'est le positionnement <strong>absolu</strong>.</p>
+<p>En pratique, le positionnement peut-être assez complexe à mettre en oeuvre. Une recherche plus approfondie pourra être menée individuellement en fonction de l'estéhtique désirée sur votre site, par exemple sur le <a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_disposition" target="_blank">site MDN</a>.</p>
+<p>Une façon moderne et intéressante de placer les boites d'une page ou d'une partie d'une page Web est l'exploitation de la propriété <strong>flexbox</strong> du CSS. Ceci peut-être en particulier intéressant pour s'adapter à différentes dimensions d'écrans (ordi, tablette, smartphone). À nouveau le <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Disposition_des_bo%C3%AEtes_flexibles_CSS/Utilisation_des_flexbox_en_CSS" target="_blank">site MDN</a> ou <a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">le site de la W3school</a> donneront des pistes à développer pour cette utilisation.
+</p>
+</section>
+
+<section>
+<h2 id="liste">Mise en forme des listes</h2>
+<p>Voici les propriétés qui me semblent le plus utile :
+</p>
+<ul>
+<li><strong>list-style-type</strong> : permet de définir le type de puce utilisée (comme symbole pour une liste non ordonnée [ul] ou comme numérotation pour une liste ordonnée [ol]) : <a target="_blank" href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_list-style-type_ex">voir les exemples de W3school.</a></li>
+<li><strong>list-style-image</strong> : permet de remplacer les puces par une image : <a target="_blank" href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_list-style-image">voir l'exemple de W3school.</a></li>
+</ul>
+</section>
+
+<section>
+<h2 id="tableau">Mise en forme des tableaux</h2>
+<p>Par défaut, aucune ligne ne délimite les cellules d'un tableau. Cependant, cet affichage est rarement ce que l'on souhaite faire. <br/>
+  Pour "tracer" les lignes d'un tableau, il suffit de définir les propriétés de bordure avec la valeur <em>solid</em> et l'épaisseur de trait désirée en px. Attention, la bordure du tableau se gère indépendamment de la bordure des cellules qui sont aussi indépendantes les unes des autres. Ceci a pour conséquence de donner un aspect de "bordure double" si l'on ne prend pas soin de spécifier la valeur <strong>collapse</strong> à la propriété <strong>border-collapse</strong>. Bref, mon conseil de base pour tracer un tableau est le code CSS suivant :
+  </p>
+  <div class="code">
+  <span class="selecteur">table</span> { <br/>
+    border-collapse:collapse;<br/>
+  } <br/>
+<span class="selecteur">td , th</span> { <br/>
+  border : solid 1px;<br/>
+    }<br/>
+  <span class="selecteur">th</span> { <br/>
+    height : 50px; // pour définir la hauteur des cellules d'en-tête<br/>
+    background-color: couleur_desiree; // pour définir une couleur de fond des cellules d'en-tête<br/>
+      }
+</div>
+</section>
+
+<section>
+<h2 id="complement-MDN">Parcours d'auto-formation</h2>
+<p>La suite de liens suivants permet de s'auto-former sur l'utilisation du CSS de façon plus détaillée. Le cours de MDN (Mozilla Developer Network) est en Français, reste simple, et contient des précisions importantes.</p>
+<ol><li><a href="https://developer.mozilla.org/fr/Apprendre/Commencer_avec_le_web/Les_bases_CSS" target="_blank">Comprendre les bases de CSS-1</a></li>
+  <li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Les_propri%C3%A9t%C3%A9s_CSS" target="_blank">Comprendre les bases de CSS-2</a></li>
+    <li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/formatage_texte_CSS" target="_blank">Comprendre les bases de CSS-3</a></li>
+      <li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Utiliser_CSS_dans_une_page_web" target="_blank">Où placer le code CSS ?</a></li>
+    </ol>
+  <p>Bien sûr, vous êtes invités à parcourir plus avant le site de MDN qui contient une source énorme de liens utiles.</p>
+  <p>Je rappelle ici aussi le site <a href="https://www.w3schools.com/" target="_blank">W3school</a> (in English) qui contient toutes les références et des exemples sur la création de pages Web.</p>
+</section>
+
+
+ <a href="#" class="top"><img src="../img/top2.png" alt="Haut de page" width="40px"></a></div>
+</div>
+<footer>
+  MAJ : 31/05/17 <br/>
+  <a href="index.html">accueil</a>
+</footer>
+</body>
+</html>

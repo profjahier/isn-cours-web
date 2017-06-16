@@ -1,0 +1,58 @@
+
+.code{
+background-color: rgb(40,44,52);
+color:rgb(190, 190, 190);
+padding-left:10px;
+padding-right:10px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-left: 20px;
+width: 80%;
+line-height: normal;
+font-size: 0.9em;
+/* font-family: serif; */
+}
+.bash{
+  background-color: rgb(48,10,36);
+  color:white;
+  padding-left:10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 20px;
+  width: 80%;
+  line-height: normal;
+  font-size: 0.9em;
+}
+.selecteur, .balise{
+color: rgb(224, 104, 95);
+}
+.classe, .attribut{
+color: rgb(203, 126, 72);
+}
+.identifiant{
+  color:rgb(89,175,215);
+}
+.commentaire{
+color: rgb(130,130,130);
+}
+.resultat{
+background-color: white;
+color:black;
+border:solid thin rgb(40,44,52);
+border-radius: 4px;
+box-shadow: 4px 4px 4px ;
+padding-left:10px;
+padding-right:10px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-left: 20px;
+width: 80%;
+line-height: normal;
+font-size: 0.9em;
+/* font-family: serif; */
+}
+/*
+textarea{
+text-align: inherit;
+}
+*/

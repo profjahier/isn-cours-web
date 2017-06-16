@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>ISN-&Delta;</title>
+<meta name="description" content="Cours de spécialité ISN : HTML5 + CSS3, Python, compléments numériques" />
+<meta name="keywords" content="ISN,HTML,CSS,Python" />
+<meta name="author" content="Ronan JAHIER" />
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="icon" type="image/png" href="../img/logo-favicon.png" />
+</head>
+<body>
+  <header>
+<p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+<span class="titre"> ISN &Delta;</span><br/>
+<span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span></p>
+  </header>
+
+
+
+
+  <nav class="sommaire">
+    <ul>
+    <li><a href="#intro">Présentation rapide d'un document html</a></li>
+    <li><a href="#page-basique">Structure minimale d'une page html</a></li>
+    <li><a href="#validateur">Le validateur du W3C</a></li>
+    <li><a href="#titres">Remarque sur les titres h1 et de h2 à h6</a></li>
+    <li><a href="#en-tete">L'en-tête</a></li>
+    <li><a href="#structure-balise">Structure générale d'une balise</a></li>
+    <li><a href="#image">Afficher une image</a></li>
+    <li><a href="#hyperlien">Créer un (hyper)lien</a></li>
+    <li><a href="#liste">Les listes</a></li>
+    <li><a href="#commentaire">Les commentaires</a></li>
+    <li><a href="#sectionnement">Quelques balises pour "sectionner" une page Web</a></li>
+    <li><a href="#lier-css">La mise en forme : CSS</a></li>
+    <li><a href="#liens-externes">Liens externes d'intérêt majeur</a></li>
+  </ul>
+</nav>
+
+<main>
+<h1>Cours HTML</h1>
+
+<section><h2>Sommaire</h2>
+  <ul>
+  <li><a href="#intro">Présentation rapide d'un document html</a></li>
+  <li><a href="#page-basique">Structure minimale d'une page html</a></li>
+  <li><a href="#validateur">Le validateur du W3C</a></li>
+  <li><a href="#titres">Remarque sur les titres h1 et de h2 à h6</a></li>
+  <li><a href="#en-tete">L'en-tête</a></li>
+  <li><a href="#structure-balise">Structure générale d'une balise</a></li>
+  <li><a href="#image">Afficher une image</a></li>
+  <li><a href="#hyperlien">Créer un (hyper)lien</a></li>
+  <li><a href="#liste">Les listes</a></li>
+  <li><a href="#commentaire">Les commentaires</a></li>
+  <li><a href="#sectionnement">Quelques balises pour "sectionner" une page Web</a></li>
+  <li><a href="#lier-css">La mise en forme : CSS</a></li>
+  <li><a href="#liens-externes">Liens externes d'intérêt majeur</a></li>
+</ul>
+</section>
+
+<section id="intro">
+<h2>Présentation rapide d'un document html</h2>
+<h3>Avertissement</h3>
+<p>Avant de commencer, je voudrais rappeler que je ne suis pas informaticien et que ce que j'écris ici n'engage que moi.
+  Je présente ma façon de voir les choses, et ceci me sert juste à me rafraîchir la mémoire.
+Je vais donc dans cet article (et les suivants) présenter quelques généralités qui me semblent bon de garder en tête.</p>
+  <p>Le langage HTML est le langage qui permet de créer des pages Web. Depuis sa création, de nombreuses évolutions ont vu le jour.
+    Nous travaillons aujourd'hui en HTML5.
+    De nouvelles fonctionnalités apparaissent aussi avec l'évolution des navigateurs qui interprètent les documents html et qui s'occupent de les afficher.
+    Les infos qu'on pourra trouver dans ce cours correspondent donc à ma connaisance au jour où j'écris ces pages (forcément !), et bien entendu ce qui est écrit ici risque de devenir désuet dans quelques temps.
+  </p>
+  <p>Je dois aussi dire en préliminaire qu'un bon développeur Web doit s'occuper des multiples navigateurs existants et de leurs différentes versions pour écrire des documents html qui pourront être lus correctement par tous les utlisateurs.
+    Pour ma part, j'ai tendance à me limiter à tester mes documents avec Firefox dans une version assez récente (voire la plus récente : ma distribution Ubuntu s'occupe des mises à jour).
+    Il est aussi important aujourd'hui de bâtir des pages Web qui pourront s'afficher de "façon jolie" aussi bien sur de grands moniteurs que sur tablettes ou smartphones. Là encore, je pense qu'on peut dans un premier temps d'apprentissage se contenter de tester ses sites sur des écrans d'ordi seulement.
+    Je conseille juste de modifier un peu la taille de la fenêtre du navigateur de temps en temps pour voir comment réagit la page Web en fonction de la taille de l'écran.
+  </p>
+  <h3>Le principe du langage HTML</h3>
+  <p>Le langage HTML est un langage <strong>balisé</strong> qui permet de <em>structurer</em> un document.
+    Un document comprend en général des paragaphes, des titres et sous-titres, des images, des hyperliens, etc.
+     Le langage HTML permet de signaler qu'on va écrire un titre ou commencer un nouveau paragaphe, etc. <br/>
+     Ceci se fait grâce à des balises notées entre crochets &lt;descriptif_de_la_balise&gt;.
+   <br/>
+    Exemples :</p>
+     <div class="code">
+     Cette ligne contient du texte non structuré.<br/>
+     &lt;<span class="balise">p</span>&gt;Ces lignes font partie d'un nouveau parapaghe car elles sont encadrées par les balises de début de paraphes &lt;p&gt; et de fin de paraphe &lt;/p&gt;&lt;<span class="balise">/p</span>&gt;<br/>
+     &lt;<span class="balise">h1</span>&gt;Ceci est un titre de niveau 1 (encadré par les balises de début de titre &lt;h1&gt; et de fin de titre &lt;/h1&gt;)&lt;<span class="balise">/h1</span>&gt;<br/>
+     &lt;<span class="balise">h2</span>&gt;Et voici un titre de niveau 2 (un sous-titre)&lt;<span class="balise">/h2</span>&gt;<br/>
+      </div>
+  <p>On remarque qu'une balise doit être ouverte comme ceci &lt;descriptif_de_la_balise&gt; puis fermée comme ceci &lt;/nom_de_l'element_de_la_balise&gt; (remarquez bien la barre de slash "/" pour fermer une balise).
+    </p>
+    <h3>Quel logiciel est nécessaire pour créer du code HTML ?</h3>
+    <p>Le plus simple des éditeurs de texte (gedit, notepad, etc) est suffisant !    <br/>
+      Il suffit juste d'enregistrer le fichier avec l'extension <strong>.html</strong>. Ensuite lorsqu'on ouvre ce fichier avec un navigateur (Firefox, Chrome, Edge, etc.),
+      c'est le navigateur qui s'occupe d'interpréter le code HTML et d'afficher correctement le document.
+    </p>
+    <p>Cela dit, il existe de nombreux éditeurs qui proposent des fonctionnalités pour aider le développeur.
+      Chacun pourra faire ses propres recherches pour trouver chaussure à son goût. Pour ma part, j'utilise <a href="atom.html">Atom</a>, logiciel en Anglais mais qui me satisfait pleinement.
+      J'apprécie sa coloration syntaxique, sa complétion automatique (géniale), son aspect modulaire et en plus son côté <em>libre</em>.
+</section>
+
+<section id="page-basique">
+<h2>Structure minimale d'une page html</h2>
+<p>Une page html contient au minimum:</p>
+  <ul>
+    <li>La définition du DTD (Document Type Definition) : un peu complexe en première approche (à détailler pour personnes non débutantes).</li>
+    <li>Le document html : défini par la balise html.</li>
+    <li>L'en-tête du document :  défini par la balise head. Contient souvent le titre de la page, l'encodage des caractères, les liens vers les fichiers externes.</li>
+    <li>Le corps du document : défini par la balise body. Contient ce qui sera visible par le visiteur du site.</li>
+  </ul>
+  <p>Tout ceci ressemble donc au minimum à :</p>
+
+  <div class="code">
+  &lt; !DOCTYPE html  &gt;<br/>
+  &lt;<span class="balise">html</span>  &gt;<br/>
+&lt;<span class="balise">head</span>  &gt;<br/>
+&lt;<span class="balise">/head</span>  &gt;<br/>
+&lt;<span class="balise">body</span>  &gt;<br/>
+&lt;<span class="balise">/body</span>  &gt;<br/>
+&lt;<span class="balise">/html</span>  &gt;
+</div>
+</section>
+
+<section id="validateur">
+<h2>Le Validateur du W3C</h2>
+<p>Dès les premiers tests, je pense qu'il est indispensable de contrôler ses fichiers avec le <a href="https://validator.w3.org/" target="_blank">Validateur du W3C</a>
+  (World Wide Web Consortium, <a href="https://fr.wikipedia.org/wiki/World_Wide_Web_Consortium" target="_blank">W3C wikipédia</a>).
+  Cet outil permet de vérifier ("check-er") la qualité de son code, et de le corriger avec les informations données par le validateur.
+  Bien sûr tout est en Anglais, mais c'est très formateur.<br/> Pour le débutant ça permet de comprendre ses erreurs et surtout de ne pas les reproduire par la suite.
+  Il faut savoir qu'un code mal écrit sera parfois (voire souvent) interpéter à peu près correctement par les navigateurs qui "devinent" nos erreurs
+  mais ceci n'est pas du tout satisfaisant et empêche de développer des sites plus complexes par la suite.
+</p>
+</section>
+
+<section id="titres">
+<h2>Remarque sur les titres h1 et de h2 à h6</h2>
+<p>Pour passer le <a href="https://validator.w3.org/" target="_blank">Validateur</a> (la bête noire du débutant en HTML) avec succès sans avertissement (warning), il faut <strong>un seul titre h1</strong> par page.
+Il faut donc considérer que les titres des sections de son document commencent au niveau h2. Tous les autres niveaux jusqu'à h6 seront donc utilisés pour les sous-titres.</p>
+</section>
+
+<section id="en-tete">
+<h2>L'en-tête</h2>
+<p>L'en-tête contient plusieurs balises qui sont optionnelles. On trouvera en général au minimum <strong>le titre</strong> de la page
+  (il apparaît comme titre d'onglet du navigateur), et le <strong>mode d'encodage des caratères</strong> (<a href="#">plus d'infos...</a> article à venir !).
+  Le mode <strong>utf-8</strong> permet d'encoder tous les caractères utiles à un Français (et même plus).
+</p>
+  <div class="code">
+    &lt;<span class="balise">head</span>  &gt;<br/>
+    &lt;<span class="balise">title</span>&gt;Titre de la page&lt;<span class="balise">/title</span>&gt;<br/>
+  &lt;<span class="balise">meta</span> <span class="attribut">charset</span>="utf-8" /&gt;<br/>
+  &lt;<span class="balise">/head</span>  &gt;
+</div>
+<p>On remarque que la balise <strong>meta</strong> est une balise <em>orpheline</em>, c'est à dire qu'elle n'a pas de balise fermante.
+Il en existe quelques autres (saut de ligne, image). Dans ce cas, on marque la fermeture de la balise à la fin des attributs avec le slash "/".
+</p>
+<h3>Petit complément</h3>
+<p>Le validateur du W3C recommande d'ajouter l'<em>attribut</em> de langue (avec la valeur "fr" pour Français) dans la balise html au début du document, sinon on a le droit à un Warning (avertissement).
+  On commencera donc avant l'en-tête par :</p>
+  <div class="code">
+    &lt;<span class="balise">html</span> <span class="attribut">lang</span>="fr"&gt;<br/>
+    &lt;<span class="balise">head</span>  &gt;<br/>
+    ...
+</div>
+</section>
+
+<section id="structure-balise">
+<h2>Structure générale d'une balise</h2>
+<p>Avec les quelques exemples déjà rencontrés, on peut maintenant préciser la structure générale d'une balise html
+  et apporter le vocabulaire précis.
+</p>
+<p>Une balise est donc notée <strong>entre crochets</strong> <strong>&lt;</strong>  et <strong>&gt;</strong>.
+   Elle contient toujours un <strong>élément</strong> qui indique ce qu'il faut structurer dans le document
+  (h1, head, body, p, etc.) et parfois (souvent !) des <strong>attributs</strong> dont on précise les <strong>valeurs</strong> (entre guillemets).
+</p>
+  <div class="code">
+    &lt;<span class="balise">élément</span>  <span class="attribut">attribut_1</span>="valeur"
+    <span class="attribut">attribut_2</span>="valeur"
+    <span class="attribut">attribut_3</span>="valeur"&gt;<br/>
+    ce qui est structuré<br/>
+    &lt;<span class="balise">/élément</span> &gt;
+</div>
+<p>Allez jeter un oeil sur tous les <em>éléments</em> qui existent sur le site de <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element" target="_blank">Mozilla Developper Network (MDN)</a>.
+</p>
+</section>
+
+<section id="image">
+<h2>Afficher une image</h2>
+<p>On peut afficher une image avec l'<em>élément</em> <strong>img</strong>. La syntaxe générale est la suivante :
+</p>
+  <div class="code">
+    &lt;<span class="balise">img</span>  <span class="attribut">src</span>="adresse du fichier image"
+    <span class="attribut">alt</span>="texte alternatif si le navigateur n'affiche pas les images"
+    <span class="attribut">height</span>="hauteur en px"
+    <span class="attribut">width</span>="largeur en px"
+    <span class="attribut">title</span>="info bulle au passage de la souris" /&gt;
+</div>
+<p>Seuls les attributs <strong>src</strong> et <strong>alt</strong> sont obligatoires.<br/>
+  <span id="adresse-relative"></span>L'adresse du fichier image peut être définie de façon relative au fichier html. <br/>
+  Prenons un exemple : l'ensemble des fichiers d'un site Web complet est enregistré dans le répertoire "site", le fichier html est enregistré dans le repertoire "rep-html" (sous-répertoire du répertoire "site") et le fichier image est enregistré dans  le repertoire "rep-img" (sous-répertoire du répertoire "site") avec le nom "mon_image.png". La valeur de l'attribut src sera donc : <strong>"../rep-img/mon_image.png"</strong>. Les deux points en début d'adresse permettent de remonter d'un niveau dans l'arborescence des fichiers par rapport à l'adresse du fichier html.
+</p>
+<p>On remarquera que l'élément img est créé dans une balise orpheline (que l'on ferme donc directement en fin de balise).
+</section>
+
+<section id="hyperlien">
+<h2>Créer un hyperlien</h2>
+<p>Un hyperlien, ou tout simplement un lien, est un texte "cliquable" qui permet d'afficher le contenu d'un autre fichier html, ou d'afficher une autre partie du fichier html en cours de lecture (utile pour les documents qui prennent plusieurs pages d'affichage dans le navigateur et dont le "scroll" peut être assez fastidieux).<br/>
+   La syntaxe générale est la suivante :
+</p>
+  <div class="code">
+    &lt;<span class="balise">a</span>  <span class="attribut">href</span>="adresse du nouveau fichier"&gt;Texte du lien
+    &lt;<span class="balise">/a</span>&gt;
+</div>
+<p>L'adresse du nouveau fichier html peut être définie de façon relative au fichier html en cours d'édition (<a href="#adresse-relative">voir exemple pour une image</a>) ou peut être une URL (adresse Web).<br/>
+  </p>
+  <p>Pour créer un lien vers une autre partie du même fichier html, il faut au préalable avoir défini "une ancre" pour cette partie du fichier. (Remarque : c'est comme cela que fonctionne le menu de ce document).
+     Une ancre peut se définir dans n'importe qu'elle balise à l'aide de l'attribut <strong>id</strong>. On pourra par exemple définir une ancre au niveau d'un titre h2 avec le code suivant :
+  </p>
+  <div class="code">
+    &lt;<span class="balise">h2</span>  <span class="attribut">id</span>="mon_ancre_ici"&gt;Titre avec une ancre
+    &lt;<span class="balise">/h2</span>&gt;
+</div>
+<p>Et ailleurs dans le fichier html on créera un lien interne avec le code suivant : </p>
+<div class="code">
+  &lt;<span class="balise">a</span>  <span class="attribut">href</span>="#mon_ancre_ici"&gt;Cliquer ici pour atteindre le titre h2 "Titre avec une ancre"&lt;<span class="balise">/a</span>&gt;
+</div>
+<p>Remarquez que l'adresse de l'ancre s'appelle avec le caractère dièse <strong>#</strong> avant le nom de l'ancre.<br/>
+    Notez également que l'on peut créer un lien vers un autre fichier au niveau d'une de ses ancres en ajoutant #nom_ancre à la fin de l'adresse du fichier.
+  </p>
+    <p>Lorsque l'on crée un lien, le nouveau fichier html remplace le contenu du fichier en cours de consultation. Si on veut ouvrir le nouveau fichier dans un nouvel onglet (conseillé pour les liens externes au site), il faut ajouter l'attribut <strong>target</strong> avec la valeur "_blank" (ne pas oublier le tiret-bas).</p>
+<p>Pour finir, il faut savoir qu'à la place du texte pour le lien, on peut utiliser une image, qui devient donc "cliquable". La flèche en bas à droite de ce document en est un bon exemple : c'est une image qui renvoie vers une ancre définie au début de ce fichier html. Cliquez-dessus pour voir...
+    </p>
+</section>
+
+<section id="liste">
+<h2>Les listes</h2>
+<p>Il existe deux sortes de listes :</p>
+<ul><li>Les listes ordonées : élémént <strong>ol</strong> (ordered list).</li>
+  <li>Les liste non ordonnées : élémént <strong>ul</strong> (unordered list).</li>
+</ul>
+<p>Chaque nouvel item d'une liste est créé avec l'élément <strong>li</strong>.<br/>
+  Le code ressemble donc à cela :</p>
+  <div class="code">
+    &lt;<span class="balise">ol</span>&gt;<br/>
+      &lt;<span class="balise">li</span>&gt;premier item de la liste ordonnée&lt;<span class="balise">/li</span>&gt;<br/>
+        &lt;<span class="balise">li</span>&gt;deuxième item de la liste ordonnée&lt;<span class="balise">/li</span>&gt;<br/>
+          &lt;<span class="balise">li</span>&gt;troisième item de la liste ordonnée&lt;<span class="balise">/li</span>&gt;<br/>
+    &lt;<span class="balise">/ol</span>&gt;<br/><br/>
+    &lt;<span class="balise">ul</span>&gt;<br/>
+      &lt;<span class="balise">li</span>&gt;un item de la liste non ordonnée&lt;<span class="balise">/li</span>&gt;<br/>
+        &lt;<span class="balise">li</span>&gt;un autre item de la liste non ordonnée&lt;<span class="balise">/li</span>&gt;<br/>
+          &lt;<span class="balise">li</span>&gt;encore un autre item de la liste non ordonnée&lt;<span class="balise">/li</span>&gt;<br/>
+    &lt;<span class="balise">/ul</span>&gt;<br/><br/>
+  </div>
+  <p>Sans mise en forme particulière, votre navigateur affiche le code précédent de cette manière :</p>
+
+    <div class="resultat">
+      <ol>
+    <li>premier item de la liste ordonnée</li>
+      <li>deuxième item de la liste ordonnée</li>
+        <li>troisième item de la liste ordonnée</li>
+  </ol>
+  <ul>
+    <li>un item de la liste non ordonnée</li>
+      <li>un autre item de la liste non ordonnée</li>
+        <li>encore un autre item de la liste non ordonnée</li>
+  </ul>
+</div>
+</section>
+
+<section id="commentaire">
+<h2>Les commentaires</h2>
+<p>Pour se repérer dans le code d'une page html, il est important de mettre régulièrement des commentaires pour expliquer ce que fait le code. Ceci rester vrai pour n'importe quel langage de programmation.<br/>
+  Les commentaires sont utiles pour re-travailler sur un document après quelques temps où l'on n'a pas touché au code source ou pour partager son code avec d'autres programmeurs. En effet, la logique que l'on peut avoir lorsque l'on développe du code n'est pas toujours évidente à comprendre par quelqu'un d'autre, ni même par soi-même parfois !</p>
+  <p>
+  Les commentaires sont ignorés par le navigateur qui ne les affiche donc pas.
+  </p>
+  <p>Le commentaire d'un code HTML s'écrit entre <strong>&lt;!--</strong> et <strong>--&gt;</strong>.
+  <div class="code">
+  <span class="commentaire"> &lt;!-- Ce texte est du commentaire qui n'est pas interprété par le navigateur<br/>
+    En voici quelques exemples d'utilisation ci-dessous --&gt;</span><br/>
+  &lt; !DOCTYPE html  &gt;  <span class="commentaire"> &lt;!-- Définition de la DTD --&gt;</span><br/>
+  &lt;<span class="balise">html</span>  &gt; <span class="commentaire"> &lt;!-- Début du doc html --&gt;</span><br/>
+&lt;<span class="balise">head</span>  &gt; <span class="commentaire"> &lt;!-- Début de l'en-tête --&gt;</span><br/>
+&lt;<span class="balise">/head</span>  &gt;<span class="commentaire"> &lt;!-- Fin de l'en-tête --&gt;</span><br/>
+&lt;<span class="balise">body</span>  &gt;<span class="commentaire"> &lt;!-- Début du contenu affiché par le navigateur --&gt;</span><br/>
+&lt;<span class="balise">/body</span>  &gt;<span class="commentaire"> &lt;!-- Fin du contenu affiché par le navigateur --&gt;</span><br/>
+&lt;<span class="balise">/html</span>  &gt;<span class="commentaire"> &lt;!-- Fin du doc html --&gt;</span>
+</div>
+</section>
+
+<section id="sectionnement">
+<h2>Quelques balises pour "sectionner" une page Web</h2>
+<p>Pour bien gérer les différentes sections d'un document Web, il est intéressant de diviser le document en différentes parties. Pour cela, différents <strong>éléments</strong> sont prédéfinis.
+  </p>
+  <h3>Un mot sur les balises inline et block</h3>
+  <p>Les balises de type <strong>block</strong> entrainent un saut de ligne avant et après le contenu décrit par la balise. Ce sont par exemple les balises de paragraphes &lt;p&gt; ou de titres &lt;h&gt;, etc.<br/>
+    Les balises de type <strong>inline</strong> laissent le contenu dans le flot du document sans aucun saut de ligne. Ce sont par exemple les balises de mise en emphase &lt;em&gt; ou de texte important &lt;strong&gt;.<br/>
+    <span style="font-size:0.8em;">Petite remarque au passage sur les éléments em ou strong. Par défaut, la plupart des navigateurs écrivent le texte "em" en italique et le texte "strong" en gras, mais il ne faut pas penser pour autant que em=italique et strong=gras : c'est le webmaster qui décide vraiment ce qu'il veut faire pour la mise en forme de ces éléments.</span>
+  </p>
+    <h3>div</h3>
+    <p>L'élément <strong>div</strong> définit une balise de type block. Cette balise permet de délimiter une partie du contenu du document html. On lui associe souvent un attribut d'identifiant <strong>id</strong> pour pouvoir y faire référence ailleurs dans le document html. Cela permet par exemple de créer des ancres pour faire des liens à l'intérieur d'une page Web  vers une div particulière.
+    </p>
+    <h3>span</h3>
+    <p>L'élément <strong>span</strong> définit une balise de type inline. Cette balise permet de délimiter en général une partie de texte au milieu d'un paragraphe. Cela permet ensuite de faire une mise forme particulière de cet extrait de texte.
+    </p>
+  <h3>header, footer, nav, section, article, aside</h3>
+  <p>Ces éléments définissent tous des balises de type block. Précisons en introduction qu'on peut se passer de ces éléments dans les premières pages que l'on construit, mais qu'une page un peu élaborée les contiendra très probablement. Ce sont les "conteneurs" de parties fréquemment trouvées sur un site.
+    <p>Ces éléments sont apparus avec HTML5. Ils sont qualifiés d'<strong>éléments sémantiques</strong> (contrairement à div ou span qui ne sont pas sémantiques) car ils indiquent au nnaigateur ou au programmeur quel type de contenu ils vont contenir.
+</p>
+<p><strong>header</strong> est le conteneur de l'en-tête de la page Web. On y placera souvent un bandeau de présentation du site, une image, un logo, etc.</p>
+<p><strong>footer</strong> est le conteneur du pied de page de la page Web. On y placera souvent des infos complémentaires sur le site, des liens de messagerie, etc.</p>
+<p><strong>nav</strong> est le conteneur d'un menu de navigation (très fréquent aussi sur un site complet).</p>
+<p><strong>section</strong> est le conteneur d'une section de la page Web, càd une partie qui fait sens en elle-même.</p>
+<p><strong>article</strong> est le conteneur d'un article qui est en général placé dans une section. Une section peut contenir plusieurs articles. Attention au vocabulaire qui n'impose pas qu'on écrive des articles au sens "article de journal" : un article peut être vu simplement comme une sous-partie d'une partie plus générale qu'est la section.<br/>
+<em>Remarque</em> : la "logique" de l'articulation  entre article et section que je viens de présenter peut en fait être inversée : on peut placer des sections dans un article. À chacun sa logique sémantique.</p>
+<p><strong>aside</strong> est le conteneur d'un "à-côté", càd quelque chose en lien avec un article ou une section mais que l'on place un peu à part.</p>
+<p>Une petite image pour résumer tout cela :<br/>
+  <img src="../img/img_sem_elements.gif" alt="exemple de dispositino des éléments sémantiques"/>
+</p>
+
+<h3>Exemple de page basique avec ces principales balises</h3>
+<p>Pour finir, je propose une structure de page assez classique reprenant les balises évoquées ici. (Bien d'autres modèles peuvent être développés.)</p>
+  <div class="code">
+  &lt; !DOCTYPE html  &gt;<br/>
+  &lt;<span class="balise">html</span>  <span class="attribut">lang</span>="fr" /&gt;<br/><br/>
+&lt;<span class="balise">head</span>  &gt;<br/>
+&lt;<span class="balise">meta</span> <span class="attribut">charset</span>="utf-8" /&gt;<br/>
+&lt;<span class="balise">title</span>&gt;Cours de Physique-Chimie&lt;<span class="balise">/title</span>&gt;<br/>
+<!-- &lt;<span class="balise">link</span> <span class="attribut">rel</span>="stylesheet" <span class="attribut">type</span>="text/css" <span class="attribut">href</span>="site/css/mon_style.css" /&gt;<br/> -->
+&lt;<span class="balise">/head</span>&gt;<br/><br/>
+&lt;<span class="balise">body</span>&gt;<br/>
+&lt;<span class="balise">header</span>&gt;contenu de l'en-tête
+&lt;<span class="balise">/header</span>&gt;<br/>
+&lt;<span class="balise">nav</span>&gt;menu de navigation avec des liens en liste
+&lt;<span class="balise">/nav</span>&gt;<br/><br/>
+&lt;<span class="balise">div</span>  <span class="attribut">id</span>="partie chimie"&gt;<br/>
+&lt;<span class="balise">section</span>&gt; <span class="commentaire">&lt;!-- Cette section traite de chimie minérale --&gt;</span><br/>
+ &lt;<span class="balise">article</span>&gt;un 1er article de chimie minérale<br/>
+ &lt;<span class="balise">aside</span>&gt;un complément annexe au 1er article de chimie minérale
+&lt;<span class="balise">/aside</span>&gt;<br/>
+&lt;<span class="balise">/article</span>&gt;<br/>
+&lt;<span class="balise">article</span>&gt;un 2ème article de chimie minérale
+&lt;<span class="balise">/article</span>&gt;<br/>
+&lt;<span class="balise">/section</span>&gt;<br/>
+&lt;<span class="balise">section</span>&gt; <span class="commentaire">&lt;!-- Cette section traite de chimie organique --&gt;</span><br/>
+&lt;<span class="balise">article</span>&gt;un 1er article de chimie organique
+&lt;<span class="balise">/article</span>&gt;<br/>
+&lt;<span class="balise">/section</span>&gt;<br/>
+&lt;<span class="balise">/div</span>&gt;<br/><br/>
+&lt;<span class="balise">div</span>  <span class="attribut">id</span>="partie physique"&gt;<br/>
+blabla...<br/>
+&lt;<span class="balise">/div</span>&gt;<br/><br/>
+
+&lt;<span class="balise">footer</span>&gt;contenu du pied de page
+&lt;<span class="balise">/footer</span>&gt;<br/>
+&lt;<span class="balise">/body</span>&gt;<br/>
+&lt;<span class="balise">/html</span>&gt;
+</div>
+<p><a href="http://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">Plus d'infos sur le w3schools...</a></p>
+</section>
+
+
+<section id="lier-css">
+<h2>La mise en forme : CSS</h2>
+<h3>Comment créer un joli site ?</h3>
+<p>Le langage HTML seul structure la page Web mais ne s'occupe d'aucune mise en forme et le navigateur se contente d'afficher du texte en noir sur fond blanc. C'est très rapidement insatisfaisant pour avoir de "jolies" pages Web.
+La mise en forme est réalisée à l'aide de feuilles de styles CSS (Cascading Style Sheet). <a href="css-index.html">Le langage CSS est présenté dans cette partie.</a> </p>
+<p>Le principe général consiste à définir des <strong>styles</strong> de mise en forme pour chaque élément html. Les styles peuvent être définis globalement dans l'en-tête du fichier html ou dans chaque balise mais l'idéal est de définir tous les styles dans un fichier externe (voire dans plusieurs).</p>
+<h3>Liaison d'une feuille CSS dans un fichier externe</h3>
+<p>Pour lier une feuille de style créée dans un fichier externe au fichier html,
+  il faut ajouter dans l'en-tête du fichier html la ligne suivante:
+  </p>
+  <div class="code">
+  &lt;<span class="balise">link</span> <span class="attribut">rel</span>="stylesheet" <span class="attribut">type</span>="text/css" <span class="attribut">href</span>="adresse_du_fichier.css" /&gt;
+</div>
+</section>
+
+<section id="liens-externes">
+<h2>Liens externes</h2>
+<p>Pour plus d'infos ou des références plus complètes que ce cours, allez sans hésiter visiter ces sites :
+  </p>
+  <ul>
+    <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element" target="_blank">
+      Référence des éléments html</a> :
+      Site de Mozilla Developper Network (MDN). Donne la liste complète de tous les éléments html,
+      classés par catégorie. Très pratique.
+     </li>
+     <li><a href="http://www.w3schools.com" target="_blank">
+       w3schools</a> : (English) LE site de référence indispensable (selon moi) qui contient tout ce qu'il faut savoir pour développer des pages Web. Le site propose de nombreux "Try it Yourself" qui permettent de tester "en live" sur des exemples simples l'effet des balises.
+      </li>
+  </ul>
+</section>
+</main>
+
+ <a href="#" class="top"><img src="../img/top2.png" alt="Haut de page" title="Haut de page" width="40"></a>
+
+<footer>
+  MAJ : 31/10/16 <br/>
+  <a href="index.html">accueil</a>
+</footer>
+</html>

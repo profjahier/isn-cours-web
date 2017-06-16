@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>ISN-&Delta;</title>
+<meta name="description" content="Cours de spécialité ISN : HTML5 + CSS3, Python, compléments numériques" />
+<meta name="keywords" content="ISN,HTML,CSS,Python" />
+<meta name="author" content="Ronan JAHIER" />
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="icon" type="image/png" href="../img/logo-favicon.png" />
+</head>
+<body>
+  <header>
+<p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+<span class="titre"> ISN &Delta;</span><br/>
+<span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span></p>
+  </header>
+
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="outils.html">Mes outils</a></li>
+      </ul>
+    </nav>
+
+  <div id="page">
+<section>
+  <h1>Serveur LAMP</h1>
+<p>C'est un serveur Web complet couplé avec php et mysql.<br/>
+Je me sers de la <a href="https://doc.ubuntu-fr.org/lamp" target="_blank">doc Ubuntu</a> pour installer les paquets nécessaires.<br/>
+J'installe le serveur avec la méthode recommandée pour Ubuntu 16.04:<br/>
+<strong>apt://apache2,php,mysql-server,libapache2-mod-php,php-mysql</strong>
+<p/>
+
+<p>Pour l'heure je n'ai pas besoin vraiment de ce service puisque je fais seulement des pages html basiques, mais ça pourra toujours servir plus tard.<br/>
+Il faudra que je teste l'utilisation de scripts en Python plutôt qu'en php : ça doit être faisable (à creuser un jour...).<br/>
+</p>
+
+<p>Après l'installation, j'ouvre "localhost" dans Firefox, et ça marche : "It works !"</p>
+<p>L'étape d'après est la configuration d'un répertoire de travail. Je m'aide à nouveau de la
+<a href="https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail" target="_blank">doc Ubuntu</a>
+<br/>
+J'ai ouvert avec les droits root (sudo gedit) le fichier :<br/>
+ <strong>/etc/apache2/sites-available/000-default.conf</strong>
+ <br/>
+ Et j'ai ajouté en dessous de la ligne "DocumentRoot /var/www" les lignes <br/>
+ <img src="../img/config-lamp-1.png"/> </p>
+<p> Puis je tape les 3 commandes :
+  <div class="bash">
+<span class="prompt">user@ordi:~$ </span>sudo mkdir /media/www-dev/<br/>
+<span class="prompt">user@ordi:~$ </span>sudo mkdir /media/www-dev/public<br/>
+<span class="prompt">user@ordi:~$ </span>sudo mkdir /media/www-dev/private
+</div>
+puis la commande :
+<div class="bash"> <span class="prompt">user@ordi:~$ </span>sudo chown -R $USER:users /media/www-dev
+</div>
+</p>
+<p>(il faudra que je creuse pour mettre un autre repertoire : <em><a href="#MAJ1">edit-MAJ</a></em> : c'est fait, voir à la fin de cette page !) </p>
+<p>
+J'ai ouvert toujours avec les droits root (sudo gedit) le fichier :<br/>
+  <strong>/etc/apache2/sites-available/000-default.conf </strong>
+ <br/>
+ Et j'ai ajouté en dessous de la zone "Directory /var/www…./Directory" les lignes <br/>
+ <img src="../img/config-lamp-2.png"/> <br/>
+
+Puis taper les 3 commandes qui créent des liens sympbolique du répertoire var/www/html vers media/www-dev :
+<div class="bash">
+<span class="prompt">user@ordi:~$ </span>sudo ln -s /media/www-dev/public /var/www/html/public<br/>
+<span class="prompt">user@ordi:~$ </span>sudo ln -s /media/www-dev/private /var/www/html/privatec<br/>
+<span class="prompt">user@ordi:~$ </span>sudo rm /var/www/html/index.htmle
+</div>
+</p>
+<p>Je n'ai pas fait la manip concernant l'erreur 403.</p>
+<p>
+Finalement je redémarre le serveur pour tout prendre en considération : <br/>
+<div class="bash">
+<span class="prompt">user@ordi:~$ </span>sudo /etc/init.d/apache2 force-reload
+</div>
+</p>
+
+<h3 id="MAJ1">MAJ : choix de mon répertoire de travail (inspiré du tutoriel de la doc Ubuntu) </h3>
+  <ol>
+    <li>Je crée un lien symbolique de /var/www/html vers le répertoire de mon choix (/home/ronan/site1) :<br/>
+      <div class="bash">
+      <span class="prompt">user@ordi:~$ </span>sudo ln -s /home/ronan/site1 /var/www/html/site1
+      </div>
+    <li>Je modifie le fichier de configuration <strong>/etc/apache2/sites-available/000-default.conf </strong> pour qu'il permette d'accéder à ce site  de façon privée (uniquement à partir de l'adresse 127.0.0.1) en ajoutant les lignes :
+    <br/>
+    <img src="../img/config-lamp-3.png"/> <br/></li>
+  </ol>
+  Mon site est maintenant accessible en tapant <strong>localhost/site1</strong> dans un navigateur.
+</p>
+</section>
+
+</div>
+<footer>
+  MAJ : 17/10/16 <br/>
+  <a href="index.html">accueil</a>
+</footer>
+</html>

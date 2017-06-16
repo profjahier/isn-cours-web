@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>ISN-&Delta;</title>
+<meta name="description" content="Cours de spécialité ISN : HTML5 + CSS3, Python, compléments numériques" />
+<meta name="keywords" content="ISN,HTML,CSS,Python" />
+<meta name="author" content="Ronan JAHIER" />
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="icon" type="image/png" href="../img/logo-favicon.png" />
+</head>
+<body>
+  <header>
+<p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+<span class="titre"> ISN &Delta;</span><br/>
+<span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span></p>
+  </header>
+
+  <nav>
+  <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="javascript:history.go(-1)">Retour</a></li>
+  </ul>
+  </nav>
+
+  <div id="page">
+<h1>Définition des couleurs pour un écran</h1>
+
+  <section id="ecran">
+  <h2>Écran couleur et synthèse additive</h2>
+  <p>L'affichage d'un écran se divise en pixels (contraction de Picture Element).<br/>
+    Chaque pixel est lui-même divisé en 3 "sous-pixels" qui permettent de définir une couleur pour le pixel qui les contient. Ces sous-pixels sont de 3 couleurs : Rouge (Red) Vert (Green) et Bleu (Blue).
+    </p>
+    <p>Un cours de physique/physiologie nous apprend que la perception des couleurs par l'oeil repose sur la synthèse additive des couleurs. En effet la vision en couleur est possible car l'oeil contient 3 types de cônes (cellules tapissant la rétine) qui sont sensibles chacun à un domaine spectral différent. En excitant ces cônes avec 3 sources de lumières rouge, verte, bleue d'intensités variables, on peut reproduire toutes les perceptions de couleurs.
+    </p>
+  <p>Pour colorer un pixel d'un écran d'une couleur souhaitée, il suffit donc de définir la bonne intensité lumineuse pour chacun des sous-pixels RVB.
+  </section>
+  <section id="codage_couleur">
+  <h2>Codage RGB</h2>
+  <p>Une couleur se définit donc en donnant une valeur à l'intensité de chaque sous-pixel. Cette intensité est codée généralement sur un octet et peut donc prendre 256 valeurs différentes (2^8), repérées de 0 à 255 en notation décimale.
+    </p>
+    <p>On peut ainsi coder plus de 16 millions de couleurs différentes (256^3). Voici Quelques exemples :</p>
+      <ul><li>Rouge : 255,0,0</li>
+        <li>Vert : 0,255,0</li>
+        <li>Jaune : 255,255,0 : couleur complémentaire du Bleu</li>
+        <li>Cyan : 0,255,255 :  couleur complémentaire du Rouge</li>
+        <li>Blanc : 255,255,255 : intensité maximale des 3 sous-pixels</li>
+        <li>Gris : 150,150,150 : 3 valeurs identiques (plus elles sont proches de 0 et plus le gris est proche du noir)</li>
+      </ul>
+    <p>  Il est pratique de se souvenir que les 3 couleurs primaires sont Rouge Vert Bleu, et leurs 3 couleurs complémentaires  sont Cyan Magenta Jaune (RVB , CMJ).
+    </p>
+    <p>Notons en dernière remarque que les couleurs complémentaire de la synthèse additive sont les couleurs primaires de la synthèse soustractive (mise en oeuvre dans la peinture ou dans l'impression).
+    </p>
+    <p>Les différents langages informatiques proposent donc de définir les couleurs par un triplet de nombres correspondant aux intensités respectives des sous-pixels Rouge Vert Bleu (RGB in English).<br/>
+      Par exemple en html-CSS, on pourra écrire : "color : rgb(103, 198, 22);"
+    </p>
+    <p>On peut également définir les valeurs en notation hexadécimal. <br/>
+      Cela pourrait donner : "color : #aa17f2;""
+    </p>
+  </section>
+    <section id="codage_hsl">
+    <h2>Codage HSL</h2>
+    <p>Il est aussi possible de définir avec une couleur par un autre triplet : le triplet hsl = hue,saturation,luminosity (teinte, saturation, luminosité) . Cela revient à faire une conversion mathématiquement entre deux systèmes de représenation (comme un chagement de coordonnées d'espace pour repérer la position d'un point à 3 dimensions).<br/>
+      Cela pourrait alors donner : "color : hsl(139, 58%, 33%);""
+    </p>
+  </section>
+    <section id="conversion">
+    <h2>Conversion RGB - Hex - HSL...</h2>
+      <p>
+      De nombreux convertisseurs en ligne existent pour passer d'un mode de représentation à un autre. Le site suivant propose toutes les <a href="http://www.rapidtables.com/convert/color/index.htm" target="_blank">conversions de couleurs</a> (et il propose des conversions dans d'autres thèmes également).
+    </p>
+    <p>La plupart des langages possèdent aussi des noms de couleurs prédéfinis que l'on peut directement utiliser si on ne recherche pas une couleur trop personnelle.<br/>
+      Les couleurs sont alors nommées en anglais : Blue, White, Purple...
+    </p>
+  </section>
+  <section  id="transparence">
+  <h2>La transparence</h2>
+  <p>Certains formats d'image proposent également de gérer la transparence. Le langage CSS permet de définir des couleurs avec une transparence, il faut ajouter un 4ème paramètre au triplet précédemment défini pour gérer cette transparence (valeur entre 0 et 1).
+    </p>
+    <p>Il faut ajouter la lettre "a" à la définition de la couleur selon le modèle suivant :<br/>
+      "color : rgba(120,200,50, 0.7) ;""<br/>
+Un facteur de transparence égal à 1 rend le pixel complètement transparent, et au contraire un facteur de transparence de 0 rend le pixel complètement opaque.
+  </section>
+
+
+</div>
+<footer>
+  MAJ : 11/04/17 <br/>
+  <a href="index.html">accueil</a>
+</footer>
+</html>

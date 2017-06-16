@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>ISN-&Delta;</title>
+<meta name="description" content="Cours de spécialité ISN : HTML5 + CSS3, Python, compléments numériques" />
+<meta name="keywords" content="ISN,HTML,CSS,Python" />
+<meta name="author" content="Ronan JAHIER" />
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="icon" type="image/png" href="../img/logo-favicon.png" />
+</head>
+<body>
+  <header>
+<p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+<span class="titre"> ISN &Delta;</span><br/>
+<span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span></p>
+  </header>
+
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+
+<div id="page">
+<h1>Making of : comment ce site s'est-il construit ?</h1>
+<p>Voilà une rubrique qu'on trouvera rarement sur un site. Je propose ici de noter tout ce que je fais sur le site. Ça devrait faire un bon tutoriel au final.
+</p>
+<p>Affichage : <a id="chrono" href="#">chronologique</a> / <a id="antichrono" href="#">antichronologique</a>
+</p>
+
+<main id="conteneur-makingof">  <!-- conteneur flex -->
+<section class="makingof"><h2>16/10/16 : Création de quelques pages presque vierges.</h2>
+  <p>Je tape un peu de texte avec presque aucune mise en forme. Il faut quand même avoir une page html de base. La structure d'une page basique est décrite <a href="html-index#page-basique">dans cet article</a>.</p>
+<p>J'ai aussi prévu une arborescence pour le classement des fichiers du site.</p>
+  <ul>
+    <li>index.html (page d'index prévue pour plus tard : pour l'instant c'est une juste porte d'ouverture sur le site).</li>
+    <li>html (contient les fichiers html)
+      <ul>
+        <li>index.html</li>
+        <li>outils.html</li>
+        <li>html-index.html</li>
+        <li>etc...</li>
+      </ul>
+      </li>
+    <li>css
+      <ul>
+        <li>contiendra les fichiers css utiles plus tard</li>
+      </ul>
+      </li>
+      <li>img
+      <ul>
+        <li>contiendra les fichiers images utiles plus tard</li>
+      </ul>
+      </li>
+      <li>js
+        <ul>
+          <li>contiendra les fichiers Javascripts ou JQuery utiles plus tard</li>
+        </ul>
+        </li>
+  </ul>
+
+  <p>*Edit : 12/04/17 : j'ajoute une image de l'arborescence (c'est plus parlant)<br/>
+    <img alt="arboresence du site" src="../img/arbre1.png"/>
+  </p>
+</section>
+
+<section class="makingof"><h2>17/10/16 : Création des premiers fichiers css : "style-site1.css", "style-code.css".</h2>
+  <p>J'ajoute un lien vers cette feuille de style sur toutes les pages déjà créées avec le code suivant placé dans l'en-tête des fichiers html.
+    </p> <div class="code">
+       &lt;<span class="balise">link</span> <span class="attribut">rel</span>="stylesheet" <span class="attribut">type</span>="text/css" <span class="attribut">href</span>="../css/style-site1.css" /&gt;
+     </div>
+     <p>Dans ce fichier, je me contente de mettre une couleur de fond jaune clair à l'ensemble de la page html avec le code suivant :
+     <div class="code"><span class="selecteur">body</span>{<br/>
+       background-color:rgb(245, 240, 200);<br/>
+     }
+   </div>
+  <p>Je crée aussi un fichier css pour la mise en forme du code html ou css. Ça risque d'être lourd à gérer, mais il faudra bien que j'arrive à présenter du code de façon "jolie" !
+    Pour l'instant, je crée des classes pour écrire de façon colorée les balises, les attributs, les sélecteurs, etc. de mon code.<br/>
+    Le code sera écrit dans une div de classe "code".
+  </p>
+    <div class="code">
+      <span class="classe">.code</span>{<br/>
+      background-color: rgb(60, 55, 60);<br/>
+      color:rgb(185, 190, 180);<br/>
+      padding-left:10px;<br/>
+      padding-top: 5px;<br/>
+      padding-bottom: 5px;<br/>
+      margin-left: 30px;<br/>
+      width: 50%;<br/>
+      }<br/>
+      <span class="classe">.balise</span>{<br/>
+      color: rgb(210, 15, 90);<br/>
+      }<br/>
+      <span class="classe">.attribut</span>{<br/>
+      color: rgb(220, 150, 40);<br/>
+      }
+    </div>
+</section>
+
+<section class="makingof"><h2>18/10/16 : Développement du CSS.</h2>
+  <p>Je commence à perdre un peu de temps à chercher une mise en forme css pas complètement moche.
+    Ce travail implique de rajouter quelques balises html dans les pages pour qu'elles soient mieux structurées pour pouvoir gérer la mise en forme.<br/>
+    Par exemple, j'ai ajouté une balise &lt;div id="page"&gt; qui englobe toutes les pages html, hormis le header et le footer : cette div contient donc le contenu d'une page.
+   </p>
+</section>
+
+<section class="makingof"><h2>21/10/16 : Dévelopement du site + Retour en haut de page + palette couleurs</h2>
+  <p>Depuis quelques jours, je fais quelques tests de CSS : je détaillerai plus tard les choix que j'aurai arrếtés. </p>
+  <p>Aujourd'hui, j'ai écrit un peu de cours de html : les bases, quoi. Du coup la page "html" s'étoffe un peu et j'ai ressenti le besoin d'avoir un moyen de remonter vite en haut de page,
+    sans tout "scroller" à la souris. Une rapide recherche sur le Web me permet de trouver des solutions et de multiples scripts. Comme pour l'instant je ne veux pas me lancer dans le Javascript ou les Jqueries,
+    je me contente d'une solution plus simple : je positionne juste une image-lien (en forme de flèche vers le haut) de manière "fixed" (en CSS) qui vise un href="#" (càd haut de page) lorsqu'on clique dessus.<br/>
+    J'ai piqué une image toute faite sur internet, et j'ai juste ajouté une transparence avec Gimp. Tout ceci pourra être amélioré dans l'avenir.
+    Je rajoute le même mécanisme sur cette page, on voit donc l'image sur le côté (testez pour voir !).
+  </p>
+  <p>Je recherche des outils pour trouver des palettes de couleurs harmonieuses. En voici une qui me plaît assez avec l'outil en ligne de chez Adobe color CC.<br/>
+    <img src="../img/palette1.png" width="700" alt="choix de palette de couleurs" />
+  </p>
+</section>
+
+<section class="makingof"><h2>30/10/16 : Écriture du cours HTML + évolution du CSS</h2>
+  <p>Pendant les derniers jours, j'ai poursuivi l'écriture du cours sur le langage HTML. </p>
+  <p>J'ai aussi un peu modifier les feuilles de styles pour la présentation générale du site. En particulier, j'ai récupéré les "vraies" couleurs de la coloration syntaxique de l'éditeur Atom avec l'outil Gcolor2 et j'ai ajouté une classe permettant de présenter le résulat d'un affichage de page Web sans mise en forme -- noir sur fond blanc --.<br/>
+    Mais aucun changement d'importance majeure dans la strucutre du site.
+  </p>
+</section>
+
+<section class="makingof"><h2>01/11/16 : MAJ de la Webographie</h2>
+  <p>J'ai fait le tour des sites utiles que j'utilise de temps en temps et je les ai listés dans la page <a href="webographie.html">Webographie</a>. Pratique !
+  </p>
+</section>
+
+<section class="makingof"><h2>02/11/16 : Affichage chrono ou antichronologique</h2>
+  <p>Aujourd'hui, j'ai ajouté un brin d'interactivité sur cette page. Je voulais pouvoir afficher le contenu des articles du making-of de façon chronologique (événements les plus anciens qui apparaissent les premiers) ou anti-chronologique (on voit d'abord les articles les plus récents - affichage classique des articles de blogs).
+  </p>
+    <p>Vous pouvez tester facilement la fonctionnalité implémentée  en cliquant sur les 2 liens en haut de cette page.
+  </p>
+  <p>Cela dit, ce n'est pas complètement immédiat à mettre en place. Ça fait appel à la "mise en page" flexbox du CSS3 et ça nécessite un peu de Javascript. Pour la partie CSS, ce n'est pas beaucoup plus compliqué que le reste, et pour la partie Javascript, j'ai utilisé en fait JQuery qui permet (si j'ai bien compris...) de faire du Javascript de façon plus aisée. Bref, le résultat fonctionne et c'est tant mieux.
+  </p>
+  <p>Je n'ai pas le temps de détailler le code mis en place pour l'instant, mais j'essaierai de le faire plus tard. En attendant, un affichage du code source de la page permet de tout voir (le script est à la fin du document).
+  </p>
+</section>
+
+<section class="makingof"><h2>11/04/17 : Complément sur les couleurs numériques</h2>
+  <p>J'écris quelques infos sur la façon de coder et nommer les couleurs avec le format RGB en paticulier, <a href="couleurs.html">sur cette page</a>.
+  </p>
+</section>
+<section class="makingof"><h2>12/04/17 : L'outil "tree" pour visualiser une arborescence</h2>
+  <p>Je viens de découvrir l'outil <strong>tree</strong> qui s'installe dans un Terminal et qui permet d'obtenir l'arborescence d'un dossier de façon visuelle assez agréable. Ça peut être pratique pour présenter l'arborescnce de son site par exemple.
+  </p>
+  <p>J'ai utilisé cette fonctionnalité pour créer l'image visible <a href="html-index.html#image">ici</a>.
+  </p>
+  <p>La commande s'utilise très simplement dans le Terminal (après avoir installé tree évidemment):</p>
+  <div class="code">
+    &gt;&gt;<span style="font-weight:bold"> sudo apt install tree</span><br/>
+     &gt;&gt;<span style="font-weight:bold"> tree nom_repertoire</span> # (pour lister complètement l'arborescence)<br/>
+     &gt;&gt;<span style="font-weight:bold"> tree -d nom_repertoire </span># (pour lister seulement les dossiers)<br/>
+       &gt;&gt;<span style="font-weight:bold"> man tree </span># (pour connaître toutes les otpions)
+   </div>
+</section>
+<section class="makingof"><h2>12/04/17 : Un bouton Retour dans la barre de navigation</h2>
+  <p>Ajout d'un bouton Retour dans le menu de navigation de certaines pages du site. Cela permet simplement de revenir à la page précédente. Je pense que cela peut-être pratique pour les pages qui peuvent être chargées depuis plusieurs endroits du site (comme la <a href="couleurs.html">page sur les couleurs</a> par exemple).</p>
+  <p>Évidemment le bouton Retour de votre Navigateur préféré donne exactement le même résultat ! Ici, cela me permet juste d'utiliser une fonction Javascript dans un lien. La fonction <strong>history.go("-1")</strong> est assez explicite (le signe - est pour les pages visitées précédemment (jusqu'à -10)).
+  </p>
+  <div class="code">
+    &lt;<span class="balise">a</span> <span class="attribut">href</span>="javascript:history.go(-1)"&gt;Retour&lt;<span class="balise">/a</span>&gt;
+   </div>
+</section>
+
+<section class="makingof"><h2>31/05/17 : Ajout de contenu</h2>
+  <p>Je viens d'ajouter un point de cours sur la création de tableaux en HTML (<a href="html-index.html#tableau">voir</a>) et un complément sur la mise en forme des tableaux et des liste en CSS (<a href="css-index.html#liste">voir</a>).
+  </p>
+</section>
+
+</main> <!-- conteneur flex -->
+
+</div>
+
+
+ <a href="#" class="top"><img src="../img/top2.png" alt="Haut de page" width="40"></a>
+
+<footer>
+  MAJ : 31/05/17 <br/>
+  <a href="index.html">accueil</a>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- JQuery en ligne sur le serveur de Google -->
+<!-- <script src="../js/jquery-3.1.1.min.js"></script>  -->
+<!-- JQuery en local sur mon site -->
+<script>
+jQuery(document).ready(function(){
+$("#antichrono").click(function(){
+$("#conteneur-makingof").css("flex-direction","column-reverse")
+});
+$("#chrono").click(function(){
+$("#conteneur-makingof").css("flex-direction","column")
+});
+});
+</script>
+</body>
+</html>

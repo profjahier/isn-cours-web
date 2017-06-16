@@ -1,0 +1,118 @@
+/* tentative de palete de couleurs n°1:
+#C1C9CC : gris clair : fond de page
+#52747F : "bleu" foncé : police body, fond footer
+#F1FCFF : presque blanc : fond de sections
+#A5E8FF : bleu ciel : liens menu hover
+#797E7F : gris plutôt foncé : bordure des sections, bordure bas de header, titre h3, liens
+*/
+body{
+color :#52747F;
+background-color: #C1C9CC;
+font-family: Helvetica, Arial, sans-serif;
+line-height: 1.4em;
+text-align: justify;
+}
+#page{
+width:90%;
+max-width: 1200px;
+margin: auto;
+margin-bottom: 20px;
+text-align: justify;
+}
+section{
+  background-color: #F1FCFF;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #797E7F;
+  border-bottom-width: thick;
+  margin-top: 20px;
+  padding: 20px;
+  padding-top: 10px;
+}
+footer{
+  color: #F1FCFF;
+  text-align: right;
+  background-color: #52747F;
+  padding: 10px;
+  border-radius: 5px;
+}
+footer a{
+  color:#F1FCFF
+}
+header{
+  font-weight: bold;
+   text-align: left;
+   line-height: 2em;
+   width: 50%;
+   margin: auto;
+}
+header img{
+  float: left;
+}
+.titre{
+    font-size: 2em;
+}
+.slogan{
+  font-size: 1.3em;
+  font-style: italic;
+  color:#797E7F ;
+}
+nav{
+  width:90%;
+  margin: auto;
+text-align: center;
+}
+nav li{
+  display: inline-block;
+  margin:1px;
+}
+a{
+  color:#797E7F;
+  outline: none; /* enleve les pointillés autour de l'image */
+}
+nav a{
+  display: inline-block;
+  width:150px;
+  padding:10px;
+  text-decoration: none;
+  color: #F1FCFF;
+  background-color: #52747F;
+}
+nav a:hover{
+  color: #797E7F;
+  background-color: #A5E8FF;
+}
+h2{
+  font-size: 1.4em;
+  font-weight: bold;
+  color:#52747F;
+}
+h3{
+  font-size: 1.2em;
+  font-weight: bold;
+  text-indent: 20px;
+  color: #797E7F;
+}
+.top{ /* c'est la classe pour l'image qui permet de remonter en haut de page */
+  position:fixed; /* l'image reste fixe en bas à droite de la page Web */
+  bottom: 110px;
+  right: 10px;
+  outline: none; /* enleve les pointillés autour de l'image */
+}
+#conteneur-makingof{ /* conteneur flexbox pour la présentation chrono ou anti-chronologique du making of */
+  display: flex;
+  flex-direction: column;
+}
+.tableau_basique{
+  border-collapse: collapse;
+}
+.tableau_basique td,th{
+  border: solid 1px;
+}
+.tableau_basique th{
+  height: 50px;
+  background-color: #aaa;
+}
+iframe{
+  border: 0;
+}
