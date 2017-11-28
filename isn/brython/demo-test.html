@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Test Brython</title>
+</head>
+
+<body onload="brython()">
+
+<div>
+    <button id="boutton">Affiche une "alert box"</button>
+
+    <script type="text/python">
+    from browser import document, alert
+    from random import randint
+
+    def message(ev):
+        alert("Ça fonctionne !\nNombre aléatoire entre 1 et 100 : "+str(randint(1,100)))
+
+    document["boutton"].bind("click", message)
+    </script>
+</div>
+
+<div>
+
+    <code>browser</code> is a Brython-specific module that defines the objects used to interact with the page.
+    <p><code>document</code> is an object representing the HTML document ; <code>document[element_id]</code> is the element with attribute id equal to element_id. In this example, <code>document["button0"]</code> is a reference to the button you click on.
+<p><code>bind()</code> is a method that defines the function to call when an event occurs on the element. When the user clicks on the element, this event is called "click". The last line means : when the user clicks on the element (here, the button with the text "display an alert box"), call the function <code>hello()</code>.
+The function takes one argument, an object representing the event.
+    <p><code>alert</code> is used to display small popup windows.
+
+</div>
+
+<script src="../js/brython.js"></script>
+<script src="../js/brython_stdlib.js"></script>
+
+</body>
+
+</html>
