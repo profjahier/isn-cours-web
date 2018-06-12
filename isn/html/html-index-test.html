@@ -8,13 +8,10 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
 <link rel="stylesheet" type="text/css" href="../css/style-code.css" />
-<link rel="stylesheet"  href="../css/prism.css" />
-<script type="text/javascript" src="js/script-code.js"></script>
+<script type="text/javascript" src="../js/script-code.js"></script>
 <link rel="icon" type="image/png" href="../img/logo-favicon.png" />
 </head>
 <body>
-  <script src="../js/prism.js"></script> <!-- Pour la mise en forme du code https://prismjs.com/ -->
-
   <header>
 <p><img class="img" src="../img/logo-30.gif" alt="logo"/>
 <span class="titre"> ISN &Delta;</span><br/>
@@ -71,32 +68,16 @@ Je vais donc dans cet article (et les suivants) présenter quelques généralit�
      Ceci se fait grâce à des balises notées entre crochets &lt;descriptif_de_la_balise&gt;.
    <br/>
     Exemples :</p>
-<!--
-   <pre><code class="language-html line-numbers">
-     Cette ligne contient du texte non structuré.<br/>
-     &lt;p</span>&gt;Ces lignes font partie d'un nouveau paragraphe car elles sont encadrées par les balises de début de paragraphe &lt;p&gt; et de fin de paragraphe &lt;/p&gt;&lt;/p</span>&gt;<br/>
-     &lt;h1</span>&gt;Ceci est un titre de niveau 1 (encadré par les balises de début de titre &lt;h1&gt; et de fin de titre &lt;/h1&gt;)&lt;/h1</span>&gt;<br/>
-     &lt;h2</span>&gt;Et voici un titre de niveau 2 (un sous-titre)&lt;/h2</span>&gt;<br/>
-      </div>
--->
-      <pre><code class="language-html line-numbers">
+     <pre class="code code-html">
 Cette ligne contient du texte non structuré.
-&lt;p&gt;
-  Ces lignes font partie d'un nouveau paragraphe car elles sont encadrées
-  par les balises de début de paragraphe <mark>&lt;p&gt;</mark> et de fin de paragraphe <mark>&lt;/p&gt;</mark>
+&lt;p&gt;Ces lignes font partie d'un nouveau paragraphe
+car elles sont encadrées par les balises de début de paragraphe et de fin de paragraphe
 &lt;/p&gt;
-&lt;h1&gt;
-  Ceci est un titre de niveau 1 (encadré par les balises
-  de début de titre <mark>&lt;h1&gt;</mark> et de fin de titre <mark>&lt;/h1&gt;</mark>)
-&lt;/h1&gt;
-&lt;h2&gt;
-  Et voici un titre de niveau 2 (un sous-titre)
-&lt;/h2&gt;
-    </code></pre>
-
+&lt;h1&gt;Ceci est un titre de niveau 1 (encadré par les balises de début et de fin de titre)&lt;/h1&gt;
+&lt;h2&gt;Et voici un titre de niveau 2 (un sous-titre)&lt;/h2&gt;
+      </pre>
   <p>On remarque qu'une balise doit être ouverte comme ceci &lt;descriptif_de_la_balise&gt; puis fermée comme ceci &lt;/nom_de_l'element_de_la_balise&gt; (remarquez bien la barre de slash "/" pour fermer une balise).
     </p>
-
     <h3>Quel logiciel est nécessaire pour créer du code HTML ?</h3>
     <p>Le plus simple des éditeurs de texte (gedit, notepad, etc) est suffisant !    <br/>
       Il suffit juste d'enregistrer le fichier avec l'extension <strong>.html</strong>. Ensuite lorsqu'on ouvre ce fichier avec un navigateur (Firefox, Chrome, Edge, etc.),
@@ -118,26 +99,16 @@ Cette ligne contient du texte non structuré.
   </ul>
   <p>Tout ceci ressemble donc au minimum à :</p>
 
-  <!--<div class="code">
-  &lt; !DOCTYPE html  &gt;<br/>
-  &lt;html</span>  &gt;<br/>
-&lt;head</span>  &gt;<br/>
-&lt;/head</span>  &gt;<br/>
-&lt;body</span>  &gt;<br/>
-&lt;/body</span>  &gt;<br/>
-&lt;/html</span>  &gt;
-</div>-->
-      <pre><code class="language-html line-numbers">
+    <pre class="code code-html">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
   &lt;/head&gt;
   &lt;body&gt;
-  &lt;body&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
-      </code></pre>
-
-      </section>
+</pre>
+</section>
 
 <section id="validateur">
 <h2>Le Validateur du W3C</h2>
@@ -162,23 +133,23 @@ Il faut donc considérer que les titres des sections de son document commencent 
   (il apparaît comme titre d'onglet du navigateur), et le <strong>mode d'encodage des caratères</strong> (<a href="complements-numeriques.html#encodage">plus d'infos...</a>).
   Le mode <strong>utf-8</strong> permet d'encoder tous les caractères utiles à un Français (et même plus).
 </p>
-<pre><code class="language-html line-numbers">
-    &lt;head  &gt;
-    &lt;title&gt;Titre de la page&lt;/title&gt;
-    &lt;meta charset="utf-8" /&gt;
-  &lt;/head  &gt;
-</code></pre>
+  <pre class="code code-html">
+&lt;head&gt;
+  &lt;title&gt;Titre de la page&lt;/title&gt;
+  &lt;meta charset="utf-8"/&gt;
+&lt;/head&gt;
+</pre>
 <p>On remarque que la balise <strong>meta</strong> est une balise <em>orpheline</em>, c'est à dire qu'elle n'a pas de balise fermante.
 Il en existe quelques autres (saut de ligne, image). Dans ce cas, on marque la fermeture de la balise à la fin des attributs avec le slash "/".
 </p>
 <h3>Petit complément</h3>
 <p>Le validateur du W3C recommande d'ajouter l'<em>attribut</em> de langue (avec la valeur "fr" pour Français) dans la balise html au début du document, sinon on a le droit à un Warning (avertissement).
   On commencera donc avant l'en-tête par :</p>
-<pre><code class="language-html line-numbers">
+  <pre class="code code-html">
 &lt;html lang="fr"&gt;
-  &lt;head  &gt;
+  &lt;head&gt;
   ...
-  </code></pre>
+</pre>
 </section>
 
 <section id="structure-balise">
@@ -190,10 +161,9 @@ Il en existe quelques autres (saut de ligne, image). Dans ce cas, on marque la f
    Elle contient toujours un <strong>élément</strong> qui indique ce qu'il faut structurer dans le document
   (h1, head, body, p, etc.) et parfois (souvent !) des <strong>attributs</strong> dont on précise les <strong>valeurs</strong> (entre guillemets).
 </p>
-<pre><code class="language-html">
-&lt;élément  attribut_1="valeur" attribut_2="valeur" attribut_3="valeur"&gt;ce qui est structuré&lt;/élément &gt;
-</code></pre>
-
+  <pre class="code code-html">
+&lt;élément attribut_1="valeur_A" attribut_2="valeur_B"&gt;ce qui est structuré&lt;/élément&gt;
+</pre>
 <p>Allez jeter un oeil sur tous les <em>éléments</em> qui existent sur le site de <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element" target="_blank">Mozilla Developper Network (MDN)</a>.
 </p>
 </section>
@@ -202,10 +172,10 @@ Il en existe quelques autres (saut de ligne, image). Dans ce cas, on marque la f
 <h2>Afficher une image</h2>
 <p>On peut afficher une image avec l'<em>élément</em> <strong>img</strong>. La syntaxe générale est la suivante :
 </p>
-<pre><code class="language-html">
+  <pre class="code code-html">
 &lt;img src="adresse du fichier image" alt="texte alternatif si le navigateur n'affiche pas les images"
-height="hauteur en px" width="largeur en px" title="info bulle au passage de la souris"/&gt;
-</code></pre>
+height="hauteur en px" width="largeur en px" title="info-bulle au passage de la souris"/&gt;
+</pre>
 <p>Seuls les attributs <strong>src</strong> et <strong>alt</strong> sont obligatoires.<br/>
   <span id="adresse-relative"></span>L'adresse du fichier image peut être définie de façon relative au fichier html. <br/>
   Prenons un exemple : l'ensemble des fichiers d'un site Web complet est enregistré dans le répertoire "site", le fichier html est enregistré dans le repertoire "rep-html" (sous-répertoire du répertoire "site") et le fichier image est enregistré dans  le repertoire "rep-img" (sous-répertoire du répertoire "site") avec le nom "mon_image.png". La valeur de l'attribut src sera donc : <strong>"../rep-img/mon_image.png"</strong>. Les deux points en début d'adresse permettent de remonter d'un niveau dans l'arborescence des fichiers par rapport à l'adresse du fichier html.<br/>
@@ -224,21 +194,21 @@ height="hauteur en px" width="largeur en px" title="info bulle au passage de la 
 <p>Un hyperlien, ou tout simplement un lien, est un texte "cliquable" qui permet d'afficher le contenu d'un autre fichier html, ou d'afficher une autre partie du fichier html en cours de lecture (utile pour les documents qui prennent plusieurs pages d'affichage dans le navigateur et dont le "scroll" peut être assez fastidieux).<br/>
    La syntaxe générale est la suivante :
 </p>
-<pre><code class="language-html">
+  <pre class="code code-html">
 &lt;a href="adresse du nouveau fichier"&gt;Texte du lien&lt;/a&gt;
-</code></pre>
+</pre>
 <p>L'adresse du nouveau fichier html peut être définie de façon relative au fichier html en cours d'édition (<a href="#adresse-relative">voir exemple pour une image</a>) ou peut être une URL (adresse Web).<br/>
   </p>
   <p>Pour créer un lien vers une autre partie du même fichier html, il faut au préalable avoir défini "une ancre" pour cette partie du fichier. (Remarque : c'est comme cela que fonctionne le menu de ce document).
      Une ancre peut se définir dans n'importe qu'elle balise à l'aide de l'attribut <strong>id</strong>. On pourra par exemple définir une ancre au niveau d'un titre h2 avec le code suivant :
   </p>
-<pre><code class="language-html">
+  <pre class="code code-html">
 &lt;h2 id="mon_ancre_ici"&gt;Titre avec une ancre&lt;/h2&gt;
-</code></pre>
+</pre>
 <p>Et ailleurs dans le fichier html on créera un lien interne avec le code suivant : </p>
-<pre><code class="language-html">
+<pre class="code code-html">
 &lt;a href="#mon_ancre_ici"&gt;Cliquer ici pour atteindre le titre h2 "Titre avec une ancre"&lt;/a&gt;
-</code></pre>
+</pre>
 <p>Remarquez que l'adresse de l'ancre s'appelle avec le caractère dièse <strong>#</strong> avant le nom de l'ancre.<br/>
     Notez également que l'on peut créer un lien vers un autre fichier au niveau d'une de ses ancres en ajoutant #nom_ancre à la fin de l'adresse du fichier.
   </p>
@@ -255,18 +225,19 @@ height="hauteur en px" width="largeur en px" title="info bulle au passage de la 
 </ul>
 <p>Chaque nouvel item d'une liste est créé avec l'élément <strong>li</strong>.<br/>
   Le code ressemble donc à cela :</p>
-<pre><code class="language-html line-numbers">
+  <pre class="code code-html">
 &lt;ol&gt;
   &lt;li&gt;premier item de la liste ordonnée&lt;/li&gt;
   &lt;li&gt;deuxième item de la liste ordonnée&lt;/li&gt;
   &lt;li&gt;troisième item de la liste ordonnée&lt;/li&gt;
 &lt;/ol&gt;
+
 &lt;ul&gt;
   &lt;li&gt;un item de la liste non ordonnée&lt;/li&gt;
   &lt;li&gt;un autre item de la liste non ordonnée&lt;/li&gt;
   &lt;li&gt;encore un autre item de la liste non ordonnée&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+  </pre>
   <p>Sans mise en forme particulière, votre navigateur affiche le code précédent de cette manière :</p>
 
     <div class="resultat">
@@ -293,7 +264,7 @@ height="hauteur en px" width="largeur en px" title="info bulle au passage de la 
       <li>l'élément <strong>th</strong> : pour créer une cellule d'en-tête (par exemple au sein de la 1ère ligne mais ceci est facultatif).</li>
 </ul>
 <p>Le code ressemble donc à cela :</p>
-<pre><code class="language-html line-numbers">
+  <pre class="code code-html">
 &lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;en-tête - cellule 1&lt;/th&gt;
@@ -311,7 +282,7 @@ height="hauteur en px" width="largeur en px" title="info bulle au passage de la 
     &lt;td&gt;ligne 2 - cellule 3&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
-</code></pre>
+  </pre>
   <p>Le code précédent donne le tableau suivant :</br>
     <table>
       <tr><th>en-tête - cellule 1</th><th>en-tête 1 - cellule 2</th><th>en-tête - cellule 3</th></tr>
@@ -337,17 +308,18 @@ height="hauteur en px" width="largeur en px" title="info bulle au passage de la 
   Les commentaires sont ignorés par le navigateur qui ne les affiche donc pas.
   </p>
   <p>Le commentaire d'un code HTML s'écrit entre <strong>&lt;!--</strong> et <strong>--&gt;</strong>.
-<pre><code class="language-html line-numbers">
+  <pre class="code code-html">
 &lt;!-- Ce texte est du commentaire qui n'est pas interprété par le navigateur
-En voici quelques exemples d'utilisation ci-dessous --&gt;
+   En voici quelques exemples d'utilisation ci-dessous --&gt;
 &lt;!DOCTYPE html&gt; &lt;!-- Définition de la DTD --&gt;
-&lt;html &gt; &lt;!-- Début du doc html --&gt;
+&lt;html&gt; &lt;!-- Début du doc html --&gt;
   &lt;head&gt; &lt;!-- Début de l'en-tête --&gt;
   &lt;/head&gt; &lt;!-- Fin de l'en-tête --&gt;
   &lt;body&gt; &lt;!-- Début du contenu affiché par le navigateur --&gt;
   &lt;/body&gt; &lt;!-- Fin du contenu affiché par le navigateur --&gt;
 &lt;/html&gt; &lt;!-- Fin du doc html --&gt;
-</code></pre>
+</pre>
+
 </section>
 
 <section id="sectionnement">
@@ -381,7 +353,7 @@ En voici quelques exemples d'utilisation ci-dessous --&gt;
 </p>
 <h3>Exemple de page basique avec ces principales balises</h3>
 <p>Pour finir, je propose une structure de page assez classique reprenant les balises évoquées ici. (Bien d'autres modèles peuvent être développés.)</p>
-<pre><code class="language-html line-numbers">
+  <pre class="code code-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fr"&gt;
   &lt;head&gt;
@@ -389,26 +361,39 @@ En voici quelques exemples d'utilisation ci-dessous --&gt;
     &lt;title&gt;Cours de Physique-Chimie&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;header&gt;contenu de l'en-tête&lt;/header&gt;
-    &lt;nav&gt;menu de navigation avec des liens en liste&lt;/nav&gt;
+    &lt;header&gt;
+      contenu de l'en-tête
+    &lt;/header&gt;
+    &lt;nav&gt;
+      menu de navigation avec des liens en liste
+    &lt;/nav&gt;
     &lt;div id="partie_chimie"&gt;
       &lt;section&gt; &lt;!-- Cette section traite de chimie minérale --&gt;
-        &lt;article&gt;un 1er article de chimie minérale
-          &lt;aside&gt;un complément annexe au 1er article de chimie minérale&lt;/aside&gt;
+        &lt;article&gt;
+          un 1er article de chimie minérale
         &lt;/article&gt;
-        &lt;article&gt;un 2ème article de chimie minérale&lt;/article&gt;
+        &lt;aside&gt;
+          un complément annexe au 1er article de chimie minérale
+        &lt;/aside&gt;
+        &lt;article&gt;
+          un 2ème article de chimie minérale
+        &lt;/article&gt;
       &lt;/section&gt;
       &lt;section&gt; &lt;!-- Cette section traite de chimie organique --&gt;
-        &lt;article&gt;un 1er article de chimie organique&lt;/article&gt;
+        &lt;article&gt;
+          un 1er article de chimie organique
+        &lt;/article&gt;
       &lt;/section&gt;
     &lt;/div&gt;
     &lt;div id="partie_physique"&gt;
       blabla...
     &lt;/div&gt;
-    &lt;footer&gt;contenu du pied de page&lt;/footer&gt;
-    &lt;/body&gt;
+    &lt;footer&gt;
+      contenu du pied de page
+    &lt;/footer&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
+</pre>
 <p><a href="http://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">Plus d'infos sur le w3schools...</a></p>
 <h3>Flexbox</h3>
 Petite remarque complémentaire : le positionnement de ces balises s'effectue bien avec les propriétés <strong>flexbox</strong> du langage CSS.
@@ -425,9 +410,9 @@ La mise en forme est réalisée à l'aide de feuilles de styles CSS (Cascading S
 <p>Pour lier une feuille de style créée dans un fichier externe au fichier html,
   il faut ajouter dans l'en-tête du fichier html la ligne suivante:
   </p>
-<pre><code class="language-html">
+  <pre class="code code-html">
 &lt;link rel="stylesheet" type="text/css" href="adresse_du_fichier.css"/&gt;
-</code></pre>
+</pre>
 </section>
 
 <section id="liens-externes">
@@ -450,8 +435,14 @@ La mise en forme est réalisée à l'aide de feuilles de styles CSS (Cascading S
  <a href="#" class="top"><img src="../img/top2.png" alt="Haut de page" title="Haut de page" width="40"></a>
 
 <footer>
-  MAJ : 09/06/18 <br/>
+  MAJ : 27/08/17 <br/>
   <a href="index.html">accueil</a>
 </footer>
+
+<script type="text/javascript">
+modifCodesHtml();
+modifCodesCss();
+</script>
+
 </body>
 </html>

@@ -8,31 +8,31 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
 <link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="stylesheet"  href="../css/prism.css" />
 <link rel="icon" type="image/png" href="../img/logo-favicon.png" />
-
-<!--
--->
 
 </head>
 <body>
-  <header>
-<p><img class="img" src="../img/logo-30.gif" alt="logo"/>
-<span class="titre"> ISN &Delta;</span><br/>
-<span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span></p>
-  </header>
+  <script src="../js/prism.js"></script> <!-- Pour la mise en forme du code https://prismjs.com/ -->
 
-  <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-      </ul>
-    </nav>
+<header>
+  <p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+    <span class="titre"> ISN &Delta;</span><br/>
+    <span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span>
+  </p>
+</header>
 
-  <div id="page">
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+  </nav>
+
+<div id="page">
 <h1>Cours JavaScript - ECMAScript (nom officiel)</h1>
 <section id="test1">
 <h2>Un premier exemple test</h2>
-<p>Ce parapraphe n'a rien de magique et n'a aucun rapport avec du JavaScript.
-</p>
+<p>Ce parapraphe n'a rien de magique et n'a aucun rapport avec du JavaScript.</p>
 <p>Ce nouveau paragraphe va présenter une action possible du JavaScript. En cliquant sur chacun des boutons ci-dessous, on va pouvoir rendre l'affichage de cette page dynamique.<br/>
 <button onclick="allumer()">Allumer la lampe</button>
 <img id="lampe_test" src="../img/lampe_off.gif" alt="image d'une lampe" style="width:100px">
@@ -41,12 +41,62 @@
 <p>(<a href="https://www.w3schools.com/js/js_intro.asp#myImage" target="_blank">exemple extrait de W3school</a>)</p>
 <p>Et pour voir un exemple de fonction utilisée, un petit clic sur ce bouton =>
 <button type="button" onclick="solution()" id="bouton_soluce">Oui, c'est moi le bouton</button></p>
-<p id="solution">Par magie JavaScript, je peux me transformer en solution</p>
+<p id="solution"><strong>Par magie JavaScript, je peux me transformer en solution</strong></p>
+<pre id="solution2" style="display: none;"><code class="language-js">
+function allumer(){
+  document.getElementById("lampe_test").src="../img/lampe_on.gif";
+}
+</code></pre>
 
-<p>Voici le code html et le code JavaScript correspondant à la section ci-dessus. Le code JavaScript est écrit dans un fichier "script-test-1.js" indépendant du fichier ".html".<br/>
-  <img src="../img/script_js_exemple_html.png" alt="html-source"/>
-    <img src="../img/script_js_exemple.png" alt="js-source"/>
+<p>Voici le code html et le code JavaScript correspondant à la section ci-dessus. Le code JavaScript est écrit dans un fichier <code>"script-test-1.js"</code> indépendant du fichier ".html".
   </p>
+
+<pre><code class="language-html line-numbers">
+    <mark>&lt;!-- extrait du fichier html --&gt;</mark>
+&lt;h2&gt;Un premier exemple test&lt;/h2&gt;
+&lt;p&gt;Ce parapraphe n'a rien de magique et n'a aucun rapport avec du JavaScript.&lt;/p&gt;
+&lt;p&gt;Ce nouveau paragraphe va présenter une action possible du JavaScript.
+En cliquant sur chacun des boutons ci-dessous, on va pouvoir rendre l'affichage
+de cette page dynamique.&lt;br/&gt;
+&lt;button onclick="allumer()"&gt;Allumer la lampe&lt;/button&gt;
+&lt;img id="lampe_test" src="../img/lampe_off.gif" alt="image d'une lampe" style="width:100px"&gt;
+&lt;button onclick="eteindre()"&gt;Éteindre la lampe&lt;/button&gt;
+&lt;/p&gt;
+&lt;p&gt;(&lt;a href="https://www.w3schools.com/js/js_intro.asp#myImage" target="_blank"&gt;exemple extrait de W3school&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Et pour voir un exemple de fonction utilisée, un petit clic sur ce bouton =&gt;
+&lt;button type="button" onclick="solution()" id="bouton_soluce"&gt;Oui, c'est moi le bouton&lt;/button&gt;
+&lt;/p&gt;
+&lt;p id="solution"&gt;&lt;strong&gt;Par magie JavaScript, je peux me transformer en solution&lt;/strong&gt;&lt;/p&gt;
+&lt;pre id="solution2" style="display: none;"&gt;&lt;code class="language-js"&gt;
+function allumer(){
+  document.getElementById("lampe_test").src="../img/lampe_on.gif";
+}
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+<pre><code class="language-js line-numbers">
+    <mark>// extrait du fichier JS</mark>
+function allumer(){document.getElementById("lampe_test").src="../img/lampe_on.gif";}
+function eteindre(){ document.getElementById("lampe_test").src="../img/lampe_off.gif";}
+var flag = 0;
+function solution(){
+  document.getElementById("bouton_soluce").innerHTML="Montrer / Cacher la solution";
+  document.getElementById("solution").innerHTML="&lt;strong&gt;Remontrez-moi la solution&lt;/strong&gt;";
+  if (flag==0){
+    flag=1;
+    document.getElementById("solution").style.display="none";
+    document.getElementById("solution2").style.display="block";
+  }else{
+    flag=0;
+    document.getElementById("solution").style.display="block";
+    document.getElementById("solution2").style.display="none";
+  }
+}
+</code></pre>
+
+<!--  <img src="../img/script_js_exemple_html.png" alt="html-source"/>
+    <img src="../img/script_js_exemple.png" alt="js-source"/>
+  -->
 </section>
 
 <section id="lienW3school">
@@ -59,7 +109,7 @@
 
 </div> <!-- Fin de div id=page -->
 <footer>
-  MAJ : 16/10/16 <br/>
+  MAJ : 11/06/18 <br/>
   <a href="index.html">accueil</a>
 </footer>
 

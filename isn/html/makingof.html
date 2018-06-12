@@ -8,9 +8,11 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
 <link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="stylesheet"  href="../css/prism.css" />
 <link rel="icon" type="image/png" href="../img/logo-favicon.png" />
 </head>
 <body>
+  <script src="../js/prism.js"></script> <!-- Pour la mise en forme du code https://prismjs.com/ -->
   <header>
 <p><img class="img" src="../img/logo-30.gif" alt="logo"/>
 <span class="titre"> ISN &Delta;</span><br/>
@@ -122,7 +124,7 @@
 <section class="makingof"><h2>30/10/16 : Écriture du cours HTML + évolution du CSS</h2>
   <p>Pendant les derniers jours, j'ai poursuivi l'écriture du cours sur le langage HTML. </p>
   <p>J'ai aussi un peu modifier les feuilles de styles pour la présentation générale du site. En particulier, j'ai récupéré les "vraies" couleurs de la coloration syntaxique de l'éditeur Atom avec l'outil Gcolor2 et j'ai ajouté une classe permettant de présenter le résulat d'un affichage de page Web sans mise en forme -- noir sur fond blanc --.<br/>
-    Mais aucun changement d'importance majeure dans la strucutre du site.
+    Mais aucun changement d'importance majeure dans la structure du site.
   </p>
 </section>
 
@@ -156,7 +158,7 @@
     &gt;&gt;<span style="font-weight:bold"> sudo apt install tree</span><br/>
      &gt;&gt;<span style="font-weight:bold"> tree nom_repertoire</span> # (pour lister complètement l'arborescence)<br/>
      &gt;&gt;<span style="font-weight:bold"> tree -d nom_repertoire </span># (pour lister seulement les dossiers)<br/>
-       &gt;&gt;<span style="font-weight:bold"> man tree </span># (pour connaître toutes les otpions)
+       &gt;&gt;<span style="font-weight:bold"> man tree </span># (pour connaître toutes les options)
    </div>
 </section>
 <section class="makingof"><h2>12/04/17 : Un bouton Retour dans la barre de navigation</h2>
@@ -173,6 +175,40 @@
   </p>
 </section>
 
+<section class="makingof"><h2>09/06/18 : PrismJs : Coloration syntaxique de code HTML ou CSS</h2>
+  <p>Jusqu'à présent pour présenter du code HTML ou CSS, je marquais chacune des balises, attributs, propriétés, etc avec des &lt;span&gt; ! C'était plus que lourd !!!<br/>
+    J'ai enfin pris le temps de rechercher une bibliothèque Javascript de coloration syntaxique et je suis tombé sur PrismJs (<a href="https://prismjs.com/index.html" alt="site officiel de PrismJs" target="_blank">site officiel</a>). C'est un très bon outil.<br/>
+    Je rédigerai certainement une page dans les compléments sur ce seul sujet. (à venir j'espère... [<span style="font-style: italic; font-weight: bold;">Edit du 12/06/18</span> : Ça y est -> <a href="prism.html">à voir ici</a>])<br/>
+    Pour l'heure, j'ai fait les corrections nécessaires sur la page du <a href="html-index.html" alt="lien vers le cours HTML">cours HTML</a> pour tenir compte de ce bel outil.
+  </p>
+  <p>Pour illustrer le gain de temps et le gain de lisibilité du code, je vous propose un extrait du code sans utiliser la bibiliothèque PrismJs et avec : je vous laisse aprrécier la différence.
+  </p>
+  <strong>SANS :</strong>
+  <pre><code class="language-html line-numbers">
+&lt;div class="code"&gt;
+&lt;!DOCTYPE html&gt;&lt;br/&gt;
+&lt;span class="balise"&gt;html&lt;/span&gt;&lt;br/&gt;
+&lt;span class="balise"&gt;head&lt;/span&gt;&lt;br/&gt;
+&lt;span class="balise"&gt;/head&lt;/span&gt;&lt;br/&gt;
+&lt;span class="balise"&gt;body&lt;/span&gt;&lt;br/&gt;
+&lt;span class="balise"&gt;/body&lt;/span&gt;&lt;br/&gt;
+&lt;span class="balise"&gt;/html&lt;/span&gt;
+&lt;/div&gt;
+  </code></pre>
+<strong>AVEC :</strong>
+<pre><code class="language-html line-numbers">
+&lt;pre&gt;&lt;code class="language-html line-numbers"&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;body&gt;
+&lt;/html&gt;
+&lt;pre&gt;&lt;code class="language-html line-numbers"&gt;
+</code></pre>
+</section>
+
 </main> <!-- conteneur flex -->
 
 </div>
@@ -181,7 +217,7 @@
  <a href="#" class="top"><img src="../img/top2.png" alt="Haut de page" width="40"></a>
 
 <footer>
-  MAJ : 31/05/17 <br/>
+  MAJ : 09/06/18 <br/>
   <a href="index.html">accueil</a>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>ISN-&Delta;</title>
+<meta name="description" content="Cours de spécialité ISN : HTML5 + CSS3, Python, compléments numériques" />
+<meta name="keywords" content="ISN,HTML,CSS,Python" />
+<meta name="author" content="Ronan JAHIER" />
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="stylesheet"  href="../css/prism.css" />
+<link rel="icon" type="image/png" href="../img/logo-favicon.png" />
+</head>
+
+<body>
+<script src="../js/prism.js"></script> <!-- Pour la mise en forme du code https://prismjs.com/ -->
+
+<header>
+  <p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+  <span class="titre"> ISN &Delta;</span><br/>
+  <span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span></p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+</nav>
+
+<div id="page">
+<h1>Tutos Python</h1>
+
+<section>
+  <h2>Sommaire</h2>
+  <p>Voici quelques exemples de code python avec des idées et astuces qui peuvent toujours servir...
+  <ul>
+    <li><a href="#*event">def fonction(*event)</a> : signature d'une focntion pouvant être apelée à partir d'un gestionnaire d'événement ou de façon "volontaire".
+    </li>
+  </ul>
+</section>
+
+<section id="*event">
+<h2>def fonction(*event)</h2>
+<p>Il arrive qu'on ait besoin qu'une fonction puisse être appelée soit lors de la réaction à un événement de l'utilisateur (clic, appui sur une touche, etc), soit lors d'un appel commandé par un bouton ou par la logique d'une autre fonction du programme.
+</p>
+<p>Le problème est qu'une fonction appelée par le gestionnaire d'événements reçoit obligatoirement comme argument l'événement qui a déclenché son appel, contrairement à un appel "standard". La <strong>signature</strong> de la fonction doit donc pouvoir s'adapter à ces deux types d'appels.
+</p>
+<p>La solution est simple : utiliser un argument optionnel dans la signature selon le modèle suivant :</p>
+<pre><code class="language-python">
+def maFonction(*event):
+</code></pre>
+<p>Voici un exemple de code plus complet pour mieux comprendre :
+   <a href="../python/def-evt-opt.py">Code source</a>
+</p>
+</section>
+
+</div> <!-- fin de page -->
+<footer>
+  MAJ : 11/06/18 <br/>
+  <a href="index.html">accueil</a>
+</footer>
+</body>
+</html>

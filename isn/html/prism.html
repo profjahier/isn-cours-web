@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>ISN-&Delta;</title>
+<meta name="description" content="Cours de spécialité ISN : HTML5 + CSS3, Python, compléments numériques" />
+<meta name="keywords" content="ISN,HTML,CSS,Python" />
+<meta name="author" content="Ronan JAHIER" />
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style-code.css" />
+<link rel="stylesheet"  href="../css/prism.css" />
+<link rel="icon" type="image/png" href="../img/logo-favicon.png" />
+
+</head>
+<body>
+  <script src="../js/prism.js"></script> <!-- Pour la mise en forme du code https://prismjs.com/ -->
+
+<header>
+  <p><img class="img" src="../img/logo-30.gif" alt="logo"/>
+    <span class="titre"> ISN &Delta;</span><br/>
+    <span class="slogan">&laquo; Votre travail fait la différence ! &raquo;</span>
+  </p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="outils.html">Mes outils</a></li>
+  </ul>
+  </nav>
+
+<div id="page">
+<h1>PrismJS : Coloration syntaxique</h1>
+
+<section id="presentation">
+<h2>Présentation rapide</h2>
+<p><a href="https://prismjs.com/index.html" target="_blank">PrismJS</a> est un outil permettant de présenter du code de façon "jolie" dans une page Web. Il propose plusieurs thèmes de coloration syntaxique pour de très nombreux langages.</p>
+<p>Quelques options complémentaires sont accessibles comme la numérotation des lignes ou la possibilité de copier le code en un clic.</p>
+</section>
+
+<section id="fonctionnement">
+<h2>Fonctionnement</h2>
+<p>L'utilisation de prism nécessite de télécharger un fichier <code>prism.js</code> et un fichier <code>prism.css</code> depuis <a href="https://prismjs.com/download.html" target="_blank">l'espace de téléchargement</a> du site prism.</p>
+<p>Ensuite, il suffit de faire un lien vers le fichier <code>prism.css</code> dans l'en-tête des fichiers <code>*.html</code> qui nécessitent l'utilisation de cet outil.</p>
+<pre><code class="lang-html">&lt;link rel="stylesheet"  href="chemin_vers/prism.css" /&gt;</pre></code>
+<p>Il faut également placer un lien vers le fichier <code>prism.js</code> dans le corps des fichiers <code>*.html</code> (je conseille juste après la balise <code class="lang-html">&lt;body&gt;</code>).
+<pre><code class="lang-html">&lt;script src="chemin_vers/prism.js"&gt;&lt;/script&gt;</pre></code>
+<p>Le code que l'on désire colorer doit alors être présenté entre les balises <code class="language-html">&lt;pre&gt;</code>  et <code class="language-html">&lt;code&gt;</code> associé à la classe du langage à colorer sous la forme suivante :</p>
+<pre class="language-html"><code>
+&lt;pre&gt;&lt;code class="language-html"&gt;
+Taper ici votre code
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<p>Les classes de langages sont par exemple :</p>
+<ul><li>language-html</li><li>language-css</li><li>language-js</li><li>language-python</li>
+</ul>
+</section>
+
+<section id="parametrage">
+<h2>Paramétrage</h2>
+<p>Sur la page de téléchargement, on peut choisir plusieurs options :</p>
+<ul>
+  <li><strong>Niveau de compression</strong> des fichiers :
+    <ul>
+      <li><strong>Development version</strong> : télécharge un fichier facilement lisible et compréhensible, mais prend plus de place que la version Minified. Utile pour comprendre le fonctionnement de l'outil.
+      </li>
+      <li><strong>Minified version</strong> : télécharge les mêmes fichiers, mais tout le texte est compacté et donc presqu'illisible, mais ça prend moins de place mémoire. C'est la version à préférer pour l'utilisation de son site, une fois qu'on est bien certain de ses choix.
+      </li>
+    </ul>
+    <br/>
+  <li>Choix du <strong>Thème</strong> de coloration : à choisir en fonction de ses gouts ! Pour faire des tests, voir les exemples proposés <a href="https://prismjs.com/index.html" target="_blank">sur cette page</a>, en choisissant les thèmes proposés (il faut cliquer des les "ronds" imbriqués les uns dans les autres en haut à droite). <br/>
+  Sur ce site, j'utilise le thème Okaïda. Il est possible ensuite de modifier un thème en faisant les écrivant directement dans le fichier <code>prism.css</code> téléchargé.
+  </li>
+  <br/>
+  <li>Choix des <strong>Langages</strong> : plus on choisit de langages pour la coloration, plus le fichier à télécharger grossit, mais de toute façon, la taille reste très raisonnable.<br/>
+    Mes choix se portent sur :
+    <ul>
+      <li>Markup</li>
+      <li>CSS</li>
+      <li>C-like</li>
+      <li>JavaScript</li>
+      <li>Arduino</li>
+      <li>Bash</li>
+      <li>C</li>
+      <li>C++</li>
+      <li>Git</li>
+      <li>Java</li>
+      <li>JSON</li>
+      <li>Latex</li>
+      <li>PHP</li>
+      <li>Processing</li>
+      <li>Python</li>
+      <li>SQL</li>
+    </ul>
+  </li>
+  <br/>
+  <li>Choix des <strong>Plugins</strong> : Les plugins sont des additifs qui permettent d'avoir des fonctionnalités supplémentaires.<br/>
+    Mes choix se portent sur :
+    <ul>
+      <li><em>Line Numbers</em> : Pour numéroter les lignes. L'utilisation basique se fait ainsi : <code class="language-html">&lt;pre class="line-numbers"&gt;</code>
+      </li>
+      <li><em>Autolinker</em> : Les liens du code sont actifs dans la page html générée.
+      </li>
+      <li><em>File Higlight</em> : Pour insérer directement un fichier annexe à colorer.<br/>
+         L'utilisation basique se fait ainsi : <code class="language-html">&lt;pre data-src="adresse_du_fichier.js"&gt;</code>. <br/>
+         Le langage utilisé est détecté automatiquement par l'extension du fichier. <br/>
+        Couplé au plugin <em>Toolbar</em>, on peut ajouter un lien de téléchargement ainsi : <br/>
+        <code class="language-html">&lt;pre data-src="adresse_du_fichier.js" data-download-link-label="Télécharger"&gt;</code>
+      </li>
+      <li><em>Show Language</em> : Signale le langage du code présenté.
+      </li>
+      <li><em>Previewers</em> : Permet de présenter au passage de la souris les valeurs des couleurs, angles, durées, etc. qui pourraient être définies dans le code.
+      </li>
+      <li><em>Keep Markup</em> : Permet de conserver le balisage avec <code class="language-html">&lt;mark&gt;</code> qu'on pourrait avoir ajouté dans le code à présenter.
+      </li>
+      <li><em>Command line</em> : Permet de présenter du code comme en ligne de commande. Voir l'utilisation spécifique <a href="https://prismjs.com/plugins/command-line/" target="_blank">directement ici</a>.
+      </li>
+      <li><em>Normalize Whitespace</em> : Permet d'enlever tous les "blancs" que le code possède en excès. Voir l'utilisation spécifique <a href="https://prismjs.com/plugins/normalize-whitespace/" target="_blank">directement ici</a> pour adapter le comportement fin de ce plugin.
+      </li>
+      <li><em>Toolbar</em> : Permet de proposer un "menu" à l'utilisateur avec des fonctionnalités spécifiques. Indispensable par exemple pour le plugin <em>Show Language</em> ou <em>Copy to Clipboard</em>. Voir l'utilisation spécifique <a href="https://prismjs.com/plugins/toolbar/" target="_blank">directement ici</a> pour des compléments.
+      </li>
+      <li><em>Copy to Clipboard Button</em> : Ajoute un bouton pour copier le code dans le presse-papier.
+      </li>
+    </ul>
+  </li>
+</ul>
+</section>
+
+</div> <!-- Fin de div id=page -->
+<footer>
+  MAJ : 12/06/18 <br/>
+  <a href="index.html">accueil</a>
+</footer>
+
+<script src="../js/script-test-1.js"></script>
+</body>
+</html>

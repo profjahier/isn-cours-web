@@ -6,7 +6,7 @@
 #797E7F : gris plutôt foncé : bordure des sections, bordure bas de header, titre h3, liens
 */
 body{
-color :#52747F;
+color: #52747F;
 background-color: #C1C9CC;
 font-family: Helvetica, Arial, sans-serif;
 line-height: 1.4em;
@@ -37,7 +37,7 @@ footer{
   border-radius: 5px;
 }
 footer a{
-  color:#F1FCFF
+  color:#F1FCFF;
 }
 header{
   font-weight: bold;
@@ -115,4 +115,27 @@ h3{
 }
 iframe{
   border: 0;
+}
+
+.test{
+  /*
+background-color: rgb(40,44,52);
+color:rgb(190, 190, 190);
+
+padding-left:10px;
+padding-right:10px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-left: 20px;
+line-height: normal;
+font-size: 1.0em;
+*/
+width: 85%;
+}
+code mark{
+  background-color: #F1FCFF;
+}
+pre{
+  overflow: scroll;
+  max-height: 450px;
 }

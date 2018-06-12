@@ -8,12 +8,10 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="../css/style-site1.css" />
 <link rel="stylesheet" type="text/css" href="../css/style-code.css" />
-<link rel="stylesheet"  href="../css/prism.css" />
-<script type="text/javascript" src="../js/script-code-test.js"></script>
+<script type="text/javascript" src="../js/script-code.js"></script>
 <link rel="icon" type="image/png" href="../img/logo-favicon.png" />
 </head>
 <body>
-  <script src="../js/prism.js"></script> <!-- Pour la mise en forme du code https://prismjs.com/ -->
   <header>
 <p><img class="img" src="../img/logo-30.gif" alt="logo"/>
 <span class="titre"> ISN &Delta;</span><br/>
@@ -53,21 +51,24 @@
 </ul>
 <p>L'exemple suivant permet d'illustrer ce qui vient d'être écrit :
 </p>
-<pre><code class="language-html line-numbers">
-    <mark>&lt;!-- extrait du fichier html --&gt;</mark>
+<pre class="code code-html">
+&lt;!--  extrait du fichier HTML --&gt;
 &lt;h1 class="texte_en_rouge"&gt;un joli titre en rouge&lt;/h1&gt;
-&lt;p&gt;Un petit paragraphe sans prétention&lt;/p&gt;
+&lt;p&gt;un petit paragraphe sans prétention&lt;/p&gt;
 &lt;p class="texte_en_rouge"&gt;
-  Ce paragraphe en revanche est écrit en rouge, il a la même <strong>classe</strong> que le titre&lt;/p&gt;
-&lt;p&gt;Ce paragraphe aussi est écrit en noir, c'est un paragraphe "standard"&lt;/p&gt;
+ce paragraphe en revanche est écrit en rouge, il a la même <strong>classe</strong> que le titre
+&lt;/p&gt;
+&lt;p&gt;ce paragraphe aussi est écrit en noir, c'est un paragraphe "standard"&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt; premier item de la liste&lt;/li&gt;
-  &lt;li id="item_particulier"&gt; ce 2ème item sera souligné. Il est repéré par son identifiant "item_particulier"&lt;/li&gt;
+  &lt;li&gt;premier item de la liste&lt;/li&gt;
+  &lt;li id="item_particulier"&gt;ce 2ème item sera souligné.
+    Il est repéré par son identifiant "item_particulier"
+  &lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+</pre>
 
-<pre><code class="language-css line-numbers">
-  <mark>// extrait du fichier css </mark>
+<pre class="code code-css">
+/* extrait du fichier CSS */
 p{
   color: black;
 }
@@ -77,7 +78,8 @@ p{
 #item_particulier{
   text-decoration: underline;
 }
-</code></pre>
+</pre>
+
 <p>L'exemple ci-dessus a introduit des <em>propriétés</em> assez évidentes comme la couleur du texte (color) ou la "décoration" du texte (text-decoration) et les <em>valeurs</em> choisies ne doivent pas sembler mystérieuses !
 </section>
 
@@ -87,14 +89,14 @@ p{
   <p>On pourra toutefois à la marge utiliser du langage CSS directement dans un fichier html si on veut exceptionnellement mettre en forme un élément particulier. Pour cela, il faudra définir l'attribut <strong>style</strong> à l'élément en question avec comme valeur les propriétés CSS et leurs valeurs désirées.
   </p>
   <p>Exemple :</p>
-  <pre><code class="language-html">
-&lt;h2 style="color:red; text-decoration:underline;"&gt;Titre particulier (rouge souligné)&lt;/h2 &gt;
-</code></pre>
+  <pre class="code code-html">
+&lt;h2 style="color:red; text-decoration:underline;"&gt;titre particulier (rouge souligné)&lt;/h2&gt;
+</pre>
 <p>La "bonne" méthode pour la mise en forme de votre site est donc de lier une feuille de style créée dans un fichier externe au fichier html. Pour cela, il faut ajouter dans l'en-tête du fichier html la ligne suivante :
   </p>
-  <pre><code class="language-html">
+  <pre class="code code-html">
 &lt;link rel="stylesheet" type="text/css" href="adresse_du_fichier.css"/&gt;
-</code></pre>
+</pre>
 <p>Précisons qu'il est possible de lier plusieurs feuilles de style à un même fichier html.</p>
 </section>
 
@@ -102,20 +104,19 @@ p{
 <h2 >Gestion des couleurs</h2>
 <p>Les propriétés liées à la couleur :
 </p>
-  <ul>
-    <li>color : couleur de la police</li>
+  <ul><li>color : couleur de la police</li>
     <li>background-color : couleur du fond</li>
   </ul>
 <p>Les couleurs peuvent être définies par les valeurs rgb, hexadécimal, hsl (et même d'autres), ou par des noms explicites.
   On peut aussi gérer la transparence des couleurs (ajout du "a" dans la définition de la couleur)<br/>
   Exemples :
   </p>
-  <pre><code class="language-css line-numbers">
+  <pre class="code code-css">
 body{
   color: rgb(103, 198, 133);
   background-color: #e25158;
 }
-.nom_classe {
+.nom_classe{
   color: hsl(139, 58%, 33%);
   background-color: rgba(235, 189, 87, 0.75);
 }
@@ -123,7 +124,7 @@ body{
   color: rgba(#716d30, 0.5);
   background-color: purple;
 }
-</code></pre>
+</pre>
 <p><a href="couleurs.html">En apprendre un peu plus</a> sur la définition des couleurs pour un écran.</p>
 </section>
 
@@ -140,11 +141,11 @@ body{
   <li><strong>text-shadow</strong> : ombrage, exprimé sous la forme :<br/>
   text-shadow: h-shadow v-shadow blur-radius color</li>
 </ul>
-  <pre><code class="language-css line-numbers">
+  <pre class="code code-css">
 selecteur{
   text-shadow: 5px 3px 1px black;
 }
-  </code></pre>
+</pre>
 <p>Plus d'info sur <a href="http://www.w3schools.com/cssref/default.asp#text" target="_blank">W3School</a></p>
 </section>
 
@@ -186,18 +187,18 @@ selecteur{
 <p>Par défaut, aucune ligne ne délimite les cellules d'un tableau. Cependant, cet affichage est rarement ce que l'on souhaite faire. <br/>
   Pour "tracer" les lignes d'un tableau, il suffit de définir les propriétés de bordure avec la valeur <em>solid</em> et l'épaisseur de trait désirée en px. Attention, la bordure du tableau se gère indépendamment de la bordure des cellules qui sont aussi indépendantes les unes des autres. Ceci a pour conséquence de donner un aspect de "bordure double" si l'on ne prend pas soin de spécifier la valeur <strong>collapse</strong> à la propriété <strong>border-collapse</strong>. Bref, mon conseil de base pour tracer un tableau est le code CSS suivant :
   </p>
-<pre><code class="language-css line-numbers">
+  <pre class="code code-css">
 table{
   border-collapse: collapse;
 }
-td , th{
+td, th{
   border: solid 1px;
 }
 th{
   height: 50px; // pour définir la hauteur des cellules d'en-tête
   background-color: couleur_desiree; // pour définir une couleur de fond des cellules d'en-tête
 }
-</code></pre>
+</pre>
 </section>
 
 <section>
@@ -216,8 +217,14 @@ th{
  <a href="#" class="top"><img src="../img/top2.png" alt="Haut de page" width="40px"></a></div>
 </div>
 <footer>
-  MAJ : 10/06/18 <br/>
+  MAJ : 31/05/17 <br/>
   <a href="index.html">accueil</a>
 </footer>
+
+<script type="text/javascript">
+modifCodesHtml();
+modifCodesCss();
+</script>
+
 </body>
 </html>

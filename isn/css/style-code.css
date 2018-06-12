@@ -9,7 +9,7 @@ padding-bottom: 5px;
 margin-left: 20px;
 width: 80%;
 line-height: normal;
-font-size: 0.9em;
+font-size: 1.2em;
 /* font-family: serif; */
 }
 .bash{
@@ -32,6 +32,9 @@ color: rgb(203, 126, 72);
 .identifiant{
   color:rgb(89,175,215);
 }
+.valeur, .propriete{
+  color:rgb(117,180,66);
+}
 .commentaire{
 color: rgb(130,130,130);
 }
@@ -51,8 +54,3 @@ line-height: normal;
 font-size: 0.9em;
 /* font-family: serif; */
 }
-/*
-textarea{
-text-align: inherit;
-}
-*/
