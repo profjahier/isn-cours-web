@@ -91,8 +91,20 @@ git config --global user.email "Votre@email.com"
 <section id="utilisation">
   <h2>Utilisation</h2>
   <h3>Initialisation d'un repo</h3>
-  <h3>Installation de Git sur votre ordinateur</h3>
-  <h3>Paramétrage de Git en lien avec le compte GitHub</h3>
+  <p>Dans le repo local :</p>
+  <pre><code class="lang-bash">git init</code></pre>
+  <h3>Récupération de la branche master du remote vers un repo local</h3>
+  <pre><code class="lang-bash">git pull</code></pre>
+  <h3>Connaître l'état du repo local</h3>
+  <pre><code class="lang-bash">git status</code></pre>
+  <h3>Ajouter des fichiers prêts à être "committés"</h3>
+  <pre><code class="lang-bash">git add nom_du_fichier</code></pre>
+  <pre><code class="lang-bash">git add . #(ajoute tous les fichiers possibles)</code></pre>
+  <h3>Faire un <em>commit</em></h3>
+  <pre><code class="lang-bash">git commit -m "commentaire du commit"</code></pre>
+  <h3>Envoyer ses modifs vers le remote</h3>
+  <pre><code class="lang-bash">git push</code></pre>
+  <p>Il faut renseigner son pseudo et mot de passe de GitHub.</p>
 </section>
 
 </div> <!-- Fin de div id=page -->
