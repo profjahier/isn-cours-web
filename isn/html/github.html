@@ -30,44 +30,69 @@
   </nav>
 
 <div id="page">
-<h1>GitHub et le versioning</h1>
+<h1>Git & GitHub: contrôle de version (versioning)</h1>
 
 <section id="presentation">
-<h2>Présentation et configuration</h2>
-<p>Je qualifierais GitHub de réseau social orienté vers le partage de code, et la sauvegarde sur un cloud. Mais cette description n'engage que moi !</p>
-<p>Github est une plateforme graphique permettant de gérer Git.</p>
-<ul>
-  <li><a href="https://www.christopheducamp.com/2013/12/15/github-pour-nuls-partie-1/" target="_blank">GitHub Pour les Nuls : Pas de Panique, Lancez-Vous ! (Partie 1)</a> : blog d'aide pour débuter avec GitHub.
-  </li>
-  <li><a href="https://www.christopheducamp.com/2013/12/16/github-pour-nuls-partie-2/" target="_blank">GitHub pour les Débutants : Consignez, Poussez et Foncez ! (Partie 2)</a> : la suite du blog d'aide pour débuter avec GitHub.
-  </li>
-  <li><a href="https://openclassrooms.com/courses/gerer-son-code-avec-git-et-github" target="_blank">GitHub sur OpenClassrooms)</a> : Gérer votre code avec Git et GitHub.
-  </li>
-  <li><a href="https://github.com/profjahier" target="_blank">Retrouvez-moi sur GitHub</a> : Mon compte GitHub. Très peu d'intérêt pour autrui, ça me sert juste de cloud !
-  </li>
+  <h2>Présentation</h2>
+  <p><span style="text-decoration: underline">Git</span> est un logiciel de contrôle de version (<strong>versioning</strong>)<br/>
+  <p>Le principe global est de pouvoir garder une trace de l'évolution d'un projet (ensemble de fichiers) et de pourvoir revenir à toute étape intermédiaire enregistrée (<strong>commit</strong>).<br/>
+  <p>Il est également possible de développer le projet sur des branches parallèles (<strong>branch</strong>) à la branche principale (<strong>master</strong>), et de fusionner différentes branches (<strong>merge</strong>).<br/>
+  <p>Le projet est sauvegardé localement dans un dossier appelé dépôt (<strong>repo</strong> ou <strong>repository</strong>). Il peut être conservé sur un serveur distant (<strong>remote</strong>).<br/>
+  <p>Pour rapatrier un <em>remote</em> dans un <em>repo</em> local, on peut intialement le clôner (<strong>clone</strong>) ; ensuite on fait des actualisations avec des <strong>pull</strong>.<br/>
+  <p>Pour envoyer ses modifications à la suite d'un <em>commit</em> vers le <em>remote</em>, on fait des <strong>push</strong>.</p>
 
-  <li><a href="https://github.atom.io/" target="_blank">Git GitHub et Atom</a> : Utiliser Git dans l'éditeur Atom.
-  </li>
+  <p><span style="text-decoration: underline">GitHub</span> est une plateforme en ligne, sorte de réseau social du geek, qui permet de gérer des <em>remote</em>. Il faut créer un compte sur le site de GitHub pour en devenir un utilisateur.<br/>
+  Git peut fonctionner sans GitHub. Mais GitHub est bien pratique ! Il permet de faire pas mal d'actions en mode graphique dans un navigateur.</p>
+</section>
+
+<section id="documentation">
+  <h2>Documentation</h2>
+  <ul>
+    <li><a href="https://www.christopheducamp.com/2013/12/15/github-pour-nuls-partie-1/" target="_blank">GitHub Pour les Nuls : Pas de Panique, Lancez-Vous ! (Partie 1)</a> : blog d'aide pour débuter avec GitHub.
+    </li>
+    <li><a href="https://www.christopheducamp.com/2013/12/16/github-pour-nuls-partie-2/" target="_blank">GitHub pour les Débutants : Consignez, Poussez et Foncez ! (Partie 2)</a> : la suite du blog d'aide pour débuter avec GitHub.
+    </li>
+    <li><a href="https://openclassrooms.com/courses/gerer-son-code-avec-git-et-github" target="_blank">GitHub sur OpenClassrooms</a> : Gérer votre code avec Git et GitHub.
+    </li>
+    <li><a href="https://github.com/profjahier" target="_blank">Retrouvez-moi sur GitHub</a> : Mon compte GitHub. Très peu d'intérêt pour autrui, ça me sert juste de cloud !
+    </li>
+    <li><a href="https://github.atom.io/" target="_blank">Git GitHub et Atom</a> : Utiliser Git dans l'éditeur Atom. <a href="https://flight-manual.atom.io/using-atom/sections/github-package/" target="_blank">Git GitHub et Atom</a> : À lire aussi.
+    </li>
+  </ul>
 </section>
 
 <section id="vocabulaire">
-<ul>
-  <li><strong>Contrôle de Version</strong> : Git conserve des "instantanés" de chaque point dans l’historique d’un projet.
-  </li>
-  <li><strong>Commit</strong> : C’est la commande qui donne à Git toute sa puissance. Quand vous « committez », vous prenez un "instantané de votre dépôt, vous donnant un point de contrôle que vous pouvez ensuite réévaluer ou restaurer votre projet à un état précédent.
-  </li>
-  <li><strong>Branche</strong> : Une branche est une "déviation" dans le projet qui peut se développer de son propre côté pour finalement (ou pas !) être reconnectée à la branche principale du projet.
-  </li>
-</ul>
+  <h2>Vocabulaire</h2>
+  <ul>
+    <li><strong>Contrôle de Version</strong> : Git conserve des "instantanés" de chaque point dans l’historique d’un projet.
+    </li>
+    <li><strong>Commit</strong> : C’est la commande qui donne à Git toute sa puissance. Quand vous « committez », vous prenez un "instantané de votre dépôt, vous donnant un point de contrôle que vous pouvez ensuite réévaluer ou restaurer votre projet à un état précédent.
+    </li>
+    <li><strong>Branche</strong> : Une branche est une "déviation" dans le projet qui peut se développer de son propre côté pour finalement (ou pas !) être reconnectée à la branche principale du projet.
+    </li>
+  </ul>
 </section>
 
 <section id="installation">
-<h2>Mise en place des outils</h2>
-<h3>Création d'un compte GitHub en ligne</h3>
-<h3>Installation de Git sur votre ordinateur</h3>
-<h3>Paramétrage de Git en lien avec le compte GitHub</h3>
+  <h2>Mise en place des outils</h2>
+  <h3>Création d'un compte GitHub en ligne</h3>
+  <p>Tout d'abord, il faut se <a href="https://github.com/join?source=header-home">créer un compte sur GitHub</a>.
+  <h3>Installation de Git sur votre ordinateur</h3>
+  <p>Ensuite, il faut <a href="https://git-scm.com/downloads">télécharger et installer Git</a>.
+  <h3>Paramétrage de Git en lien avec le compte GitHub</h3>
+  <p>Une fois que Git est installé, il faut exécuter les deux commandes suivantes :</p>
+  <pre><code class="lang-bash">
+git config --global user.name "Votre nom ou pseudo"
+git config --global user.email "Votre@email.com"
+  </code></pre>
+  <p>En renseignant évidemment les mêmes identifiants que sur le compte GitHub.</p>
+</section>
 
-
+<section id="utilisation">
+  <h2>Utilisation</h2>
+  <h3>Initialisation d'un repo</h3>
+  <h3>Installation de Git sur votre ordinateur</h3>
+  <h3>Paramétrage de Git en lien avec le compte GitHub</h3>
 </section>
 
 </div> <!-- Fin de div id=page -->
