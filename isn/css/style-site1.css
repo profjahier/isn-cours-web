@@ -14,7 +14,8 @@ text-align: justify;
 }
 #page{
 width:90%;
-max-width: 1200px;
+max-width: 900px;
+min-width: 600px;
 margin: auto;
 margin-bottom: 20px;
 text-align: justify;
@@ -60,7 +61,7 @@ header img{
 nav{
   width:90%;
   margin: auto;
-text-align: center;
+  text-align: center;
 }
 nav li{
   display: inline-block;
