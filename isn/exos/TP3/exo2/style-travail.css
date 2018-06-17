@@ -1,0 +1,37 @@
+#page{
+  display: flex;
+}
+#travail{
+  width:330px;
+  min-width: 330px;
+  background-color: rgb(169, 158, 221);
+  margin-left:8px;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+#travail p{
+  color:black;
+}
+.th1{
+  color:grey;
+  background-color: blue;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 5px 2px;
+  border: solid 1px;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.tli{
+  color:rgb(93, 37, 82);
+  background: url("img/puce.png") no-repeat;
+  background-position: top left;
+  background-color: rgb(174, 241, 161);
+  padding: 5px;
+  padding-left: 32px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Exos CSS niv.1</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style-travail.css" />
+<link rel="stylesheet" href="style-exo.css" />
+</head>
+
+<body>
+<div id="page">
+	<div id="travail"> <!-- début de la zone d'énoncé du travail à effectuer -->
+		<div class="th1">Travail à effectuer</div>
+		<div class="tli">Colorer le fond de la page en jaune clair</div>
+		<div class="tli">Mettre une image de fond à la zone d'exercice</div>
+		<div class="tli">Définir la zone d'exercice d'une largeur de 700 pixels</div>
+		<div class="tli">Le contenu doit être à 20 pixels des bords</div>
+		<div class="tli">Mise en forme des titres : <br/>taille, couleur, fond, bordure, espacement, centrage,  ombre.</div>
+		<div class="tli">Mise en forme des liens : <br/>
+			enlever le soulignement par défaut des liens, ajouter un soulignement en pointillés, créer une ombre floutée sur le texte du lien lorsque la souris passe dessus, enlever les pointillés des liens déjà visités.</div>
+		<div class="tli">Mettre toutes les balises de class "texte_gris" en gris</div>
+		<div class="tli">Mettre en forme les "Aide" (libre choix de présentation)</div>
+		<div class="tli">Justifier le texte des paragraphes qui sont dans la div "justifie"</div>
+		<div class="tli">Modifier le code html pour que le 1<sup>er</sup> paragraphe justifié devienne "special" et 2<sup>ème</sup> paragraphe justifié devienne "particulier" (voir début du fichier CSS)</div>
+		<div class="tli">Ajouter une marge de 50 pixels à gauche de la liste à puces, et changer les ronds de puces en carrés.</div>
+	</div> <!-- fin de la zone d'énoncé du travail -->
+
+<div id="exo"> <!-- début de la zone d'exercices -->
+	<h1>À vous de tester</h1>
+	<h2>Couleur et image de fond</h2>
+	<p>On peut trouver des images <a href="http://www.photo-libre.fr" target="_blank">sur ce site</a>.<p>
+	<p><span class="aide">Aide</span> : Les couleurs sont définies en (r,g,b) ou en #hex au choix. Le site W3school propose un outil de choix de couleur : <a href="http://www.w3schools.com/colors/colors_picker.asp"  target="_blank"/>color picker</a>.<p>
+
+	<h2>Largeur de la zone d'exercice</h2>
+	<p><span class="aide">Aide</span>  : repérer dans le code html la façon dont est identifiée la zone d'exercice.</p>
+
+	<h2>Mise en forme des titres</h2>
+	<p><span class="aide">Aide</span>  :
+		<ul>
+			<li>couleur = color</li>
+			<li>police = font </li>
+			<li>ombre = shadow </li>
+			<li>bordure = border </li>
+			<li>boite = box</li>
+			<li>rayon = radius </li>
+		</ul>
+		(Ce ne sont que quelques pistes !)
+	</p>
+
+	<h2>Mise en forme des liens</h2>
+	<p><span class="aide">Aide</span>  : il existe des pseudos-classes qui s'appliquent en particulier sur les liens.</p><p><span class="aide">Aide</span>  : souligner peut être une bordure du bas !</p>
+
+	<h2 class="texte_gris">Jouons avec la class "gris"</h2>
+	<p>La suite est juste du texte alétaoire.<br/>
+		Inter quos Paulus eminebat notarius ortus in Hispania, glabro quidam sub vultu latens, odorandi vias periculorum occultas perquam sagax. is in Brittanniam missus ut militares quosdam perduceret ausos conspirasse Magnentio, cum reniti non possent, iussa licentius supergressus fluminis modo fortunis conplurium sese repentinus infudit et ferebatur per strages multiplices ac ruinas, vinculis membra ingenuorum adfligens et quosdam obterens manicis, crimina scilicet multa consarcinando a veritate longe discreta. unde admissum est facinus impium, quod Constanti tempus nota inusserat sempiterna.
+	</p>
+	<p class="texte_gris" >La suite est juste du texte alétaoire mais en gris !!.<br/>
+		Inter quos Paulus eminebat notarius ortus in Hispania, glabro quidam sub vultu latens, odorandi vias periculorum occultas perquam sagax. is in Brittanniam missus ut militares quosdam perduceret ausos conspirasse Magnentio, cum reniti non possent, iussa licentius supergressus fluminis modo fortunis conplurium sese repentinus infudit et ferebatur per strages multiplices ac ruinas, vinculis membra ingenuorum adfligens et quosdam obterens manicis, crimina scilicet multa consarcinando a veritate longe discreta. unde admissum est facinus impium, quod Constanti tempus nota inusserat sempiterna.
+	</p>
+
+	<h2>Paragraphes justifiés</h2>
+	<div  class="justifie">
+		<p class="special"><u>1<sup>er</sup> paragraphe justifié</u> : Illud tamen te esse admonitum volo, primum ut qualis es talem te esse omnes existiment ut, quantum a rerum turpitudine abes, tantum te a verborum libertate seiungas; deinde ut ea in alterum ne dicas, quae cum tibi falso responsa sint, erubescas. Quis est enim, cui via ista non pateat, qui isti aetati atque etiam isti dignitati non possit quam velit petulanter, etiamsi sine ulla suspicione, at non sine argumento male dicere? Sed istarum partium culpa est eorum, qui te agere voluerunt; laus pudoris tui, quod ea te invitum dicere videbamus, ingenii, quod ornate politeque dixisti.
+		</p>
+		<p id="particulier"><u>2<sup>ème</sup> paragraphe justifié</u> : Haec igitur Epicuri non probo, inquam. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video minime esse deterritum.
+		</p>
+		<p><u>3<sup>ème</sup> paragraphe justifié</u> : Quod opera consulta cogitabatur astute, ut hoc insidiarum genere Galli periret avunculus, ne eum ut praepotens acueret in fiduciam exitiosa coeptantem. verum navata est opera diligens hocque dilato Eusebius praepositus cubiculi missus est Cabillona aurum secum perferens, quo per turbulentos seditionum concitores occultius distributo et tumor consenuit militum et salus est in tuto locata praefecti. deinde cibo abunde perlato castra die praedicto sunt mota.
+		</p>
+	</div>  <!-- fin de div justifie -->
+
+</div> <!-- fin de la zone d'exercices -->
+
+</div> <!-- fin de div page -->
+</body>
+</html>
